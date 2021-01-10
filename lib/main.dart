@@ -50,7 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Text("宿泊日数"),
-                Text("宿泊日数"),
+                DropdownButton(
+                  items: [],
+                  onChanged: null,
+                ),
               ],
             ),
           ],
