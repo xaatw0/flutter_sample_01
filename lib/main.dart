@@ -51,8 +51,14 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text("宿泊日数"),
                 DropdownButton(
-                  items: [],
-                  onChanged: null,
+                  value: _saty,
+                  items: [
+                    DropdownMenuItem(
+                      child: Text("日帰り"),
+                      value: 0,
+                    ),
+                  ],
+                  onChanged: (value) {},
                 ),
               ],
             ),
