@@ -244,6 +244,10 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       text = text + value;
       _price = int.parse(text);
+
+      _minus = (_price * 0.35).toInt();
+      _coupon = (_price * 0.15).toInt();
+      _pay = _price - _minus;
     });
   }
 }
