@@ -39,6 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    List<DropdownMenuItem> stayList = List.generate(
+      7,
+      (index) => DropdownMenuItem(
+        child: Text("${index + 1}泊${index + 2}日"),
+        value: index + 1,
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
