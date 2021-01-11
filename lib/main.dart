@@ -58,24 +58,26 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Expanded(child: Text("宿泊日数")),
-                DropdownButton(
-                  value: _saty,
-                  items: [
-                    DropdownMenuItem(
-                      child: Text("日帰り"),
-                      value: 0,
-                    ),
-                    ...stayList,
-                    DropdownMenuItem(
-                      child: Text("8泊以上"),
-                      value: 10,
-                    ),
-                  ],
-                  onChanged: (value) {
-                    setState(() {
-                      _saty = value;
-                    });
-                  },
+                Expanded(
+                  child: DropdownButton(
+                    value: _saty,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("日帰り"),
+                        value: 0,
+                      ),
+                      ...stayList,
+                      DropdownMenuItem(
+                        child: Text("8泊以上"),
+                        value: 10,
+                      ),
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        _saty = value;
+                      });
+                    },
+                  ),
                 ),
               ],
             ),
