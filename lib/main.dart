@@ -72,7 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                   onChanged: (value) {
-                    _saty = value;
+                    setState(() {
+                      _saty = value;
+                    });
                   },
                 ),
               ],
