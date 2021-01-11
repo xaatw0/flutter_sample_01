@@ -180,6 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _onKeyboardTap(String value) {
     setState(() {
       text = text + value;
+      _price = int.parse(text);
     });
   }
 }
