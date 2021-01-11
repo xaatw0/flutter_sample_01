@@ -47,6 +47,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
+    List<DropdownMenuItem> peopleList = List.generate(
+      10,
+      (index) => DropdownMenuItem(
+        child: Text("${index + 1}人"),
+        value: index + 1,
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -110,24 +118,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(
                   flex: 3,
                   child: DropdownButton(
-                    value: _saty,
-                    items: [
-                      DropdownMenuItem(
-                        child: Text("日帰り"),
-                        value: 0,
-                      ),
-                      ...stayList,
-                      DropdownMenuItem(
-                        child: Text("8泊以上"),
-                        value: 10,
-                      ),
-                    ],
+                    value: _person,
+                    items: peopleList,
                     onChanged: (value) {
                       setState(() {
-                        _saty = value;
+                        _person = value;
                       });
                     },
                   ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      "料金",
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Text("${_price}"),
                 ),
               ],
             ),
