@@ -205,12 +205,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text(
                       "支払額",
                       textAlign: TextAlign.right,
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 3,
-                  child: Text("${formatter.format(_pay)}"),
+                  child: Text(
+                    "${formatter.format(_pay)}",
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
                 ),
               ],
             ),
