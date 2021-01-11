@@ -59,9 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Expanded(
                   flex: 2,
-                  child: Text(
-                    "宿泊日数",
-                    textAlign: TextAlign.right,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      "宿泊日数",
+                      textAlign: TextAlign.right,
+                    ),
                   ),
                 ),
                 Expanded(
