@@ -40,6 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _coupon = 0;
   int _pay = 0;
 
+  final formatter = NumberFormat("#,###");
+
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem> stayList = List.generate(
@@ -168,7 +170,67 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   flex: 3,
-                  child: Text("${_price}"),
+                  child: Text("${formatter.format(_price)}"),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      "割引",
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Text("${formatter.format(_price)}"),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      "支払額",
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Text("${formatter.format(_price)}"),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      "クーポン",
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Text("${formatter.format(_price)}"),
                 ),
               ],
             ),
