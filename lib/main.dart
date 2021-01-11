@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   flex: 3,
-                  child: Text("${formatter.format(_price)}"),
+                  child: Text("${formatter.format(_minus)}"),
                 ),
               ],
             ),
@@ -210,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   flex: 3,
-                  child: Text("${formatter.format(_price)}"),
+                  child: Text("${formatter.format(_pay)}"),
                 ),
               ],
             ),
@@ -230,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   flex: 3,
-                  child: Text("${formatter.format(_price)}"),
+                  child: Text("${formatter.format(_coupon)}"),
                 ),
               ],
             ),
