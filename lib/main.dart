@@ -33,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _price = 0;
   int _person = 1;
   int _saty = 0;
+  String text = "";
 
   int _minus = 0;
   int _coupon = 0;
@@ -130,6 +131,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            NumericKeyboard(
+              onKeyboardTap: _onKeyboardTap,
+              textColor: Colors.red,
+              rightButtonFn: () {
+                setState(() {
+                  text = text.substring(0, text.length - 1);
+                });
+              },
+              rightIcon: Icon(
+                Icons.backspace,
+                color: Colors.red,
+              ),
+              leftButtonFn: () {
+                print('left button clicked');
+              },
+              leftIcon: Icon(
+                Icons.check,
+                color: Colors.red,
+              ),
+            ),
             Row(
               children: [
                 Expanded(
@@ -154,5 +175,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  _onKeyboardTap(String value) {
+    setState(() {
+      text = text + value;
+    });
   }
 }
