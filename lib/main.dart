@@ -66,6 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       value: 0,
                     ),
                     ...stayList,
+                    DropdownMenuItem(
+                      child: Text("8泊以上"),
+                      value: 10,
+                    ),
                   ],
                   onChanged: (value) {},
                 ),
