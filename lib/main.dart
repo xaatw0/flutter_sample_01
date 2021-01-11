@@ -65,14 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text("日帰り"),
                       value: 0,
                     ),
-                    DropdownMenuItem(
-                      child: Text("1泊2日"),
-                      value: 1,
-                    ),
-                    DropdownMenuItem(
-                      child: Text("2泊3日"),
-                      value: 2,
-                    ),
+                    ...stayList,
                   ],
                   onChanged: (value) {},
                 ),
