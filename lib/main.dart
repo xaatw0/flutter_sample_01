@@ -93,6 +93,44 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      "宿泊人数",
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: DropdownButton(
+                    value: _saty,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("日帰り"),
+                        value: 0,
+                      ),
+                      ...stayList,
+                      DropdownMenuItem(
+                        child: Text("8泊以上"),
+                        value: 10,
+                      ),
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        _saty = value;
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
