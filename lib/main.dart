@@ -57,8 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Row(
               children: [
-                Expanded(child: Text("宿泊日数")),
                 Expanded(
+                  flex: 2,
+                  child: Text(
+                    "宿泊日数",
+                    textAlign: TextAlign.right,
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
                   child: DropdownButton(
                     value: _saty,
                     items: [
