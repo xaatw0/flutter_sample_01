@@ -20,4 +20,20 @@ class GotoModel {
   void setSay(int stay) {
     _stay = stay;
   }
+
+  int getPrice() {
+    return _price;
+  }
+
+  int getMinus() {
+    return _minus;
+  }
+
+  int getPay() {
+    return _pay;
+  }
+
+  int getCoupone() {
+    return _coupon;
+  }
 }
