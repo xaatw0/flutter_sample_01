@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -32,7 +34,16 @@ void main() {
   });
 
   group("計算", () {
-    test("1人1泊", () {});
+    test("1人1泊", () {
+      target.setPerson(1);
+      target.setStay(1);
+      target.setPrice(20000);
+      expect(target.price, 20000);
+
+      expect(target.getMinus(), 7000);
+      expect(target.getPay(), 13000);
+      expect(target.getCoupone(), 3000);
+    });
     test("1人2泊", () {});
     test("1人日帰り", () {});
   });
