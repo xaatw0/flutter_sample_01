@@ -26,14 +26,14 @@ class GotoModel {
   }
 
   int getMinus() {
-    return _minus;
+    return (_price * 0.35).floor();
   }
 
   int getPay() {
-    return _pay;
+    return (_price * 0.65).floor();
   }
 
   int getCoupone() {
-    return _coupon;
+    return (_price * 0.15).floor();
   }
 }
