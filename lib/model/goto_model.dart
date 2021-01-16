@@ -9,6 +9,10 @@ class GotoModel {
   int _coupon = 0;
   int _pay = 0;
 
+  get price => _price;
+  get person => _person;
+  get stay => _stay;
+
   void setPrice(int price) {
     _price = price;
   }
@@ -17,12 +21,8 @@ class GotoModel {
     _person = person;
   }
 
-  void setSay(int stay) {
+  void setStay(int stay) {
     _stay = stay;
-  }
-
-  int getPrice() {
-    return _price;
   }
 
   int getMinus() {
