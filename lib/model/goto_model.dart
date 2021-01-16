@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class GotoModel {
+  static const PRICE_LIMIT = 20000;
+
   int _price = 0;
   int _person = 1;
   int _stay = 0;
