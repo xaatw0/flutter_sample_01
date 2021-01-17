@@ -39,11 +39,7 @@ class GotoModel {
   }
 
   int getCoupone() {
-    int max = PRICE_LIMIT * 2;
-    bool isExpensive = max < _price;
-    if (isExpensive) {
-      return (max * 0.15 / 1000).round() * 1000;
-    }
-    return (_price * 0.15 / 1000).round() * 1000;
+    int target = Math.min(_price, PRICEDOWN_LIMIT);
+    return (target * 0.15 / 1000).round() * 1000;
   }
 }
