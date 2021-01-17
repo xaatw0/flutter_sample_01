@@ -28,14 +28,25 @@ class GotoModel {
   }
 
   int getMinus() {
+    int max = PRICE_LIMIT * 2;
+    bool isExpensive = max < _price;
+    if (isExpensive) {
+      return (max * 0.35).toInt();
+    }
+
     return (_price * 0.35).floor();
   }
 
   int getPay() {
-    return (_price * 0.65).floor();
+    return _price - getMinus();
   }
 
   int getCoupone() {
+    int max = PRICE_LIMIT * 2;
+    bool isExpensive = max < _price;
+    if (isExpensive) {
+      return (max * 0.15 / 1000).round() * 1000;
+    }
     return (_price * 0.15 / 1000).round() * 1000;
   }
 }
