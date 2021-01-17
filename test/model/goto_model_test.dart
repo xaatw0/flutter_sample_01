@@ -33,7 +33,7 @@ void main() {
     });
   });
 
-  group("計算", () {
+  group("お一人様計算", () {
     test("1人1泊", () {
       target.setPerson(1);
       target.setStay(1);
@@ -97,6 +97,62 @@ void main() {
       expect(target.getMinus(), 1750);
       expect(target.getPay(), 3250);
       expect(target.getCoupone(), 1000);
+    });
+  });
+
+  group("お3人様計算", () {
+    test("3人1泊", () {
+      target.setPerson(3);
+      target.setStay(1);
+      target.setPrice(20000);
+      expect(target.price, 20000);
+
+      expect(target.getMinus(), 7000);
+      expect(target.getPay(), 13000);
+      expect(target.getCoupone(), 3000);
+    });
+
+    test("3人1泊クーポン制限超え", () {
+      target.setPerson(3);
+      target.setStay(1);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 42000);
+      expect(target.getPay(), 258000);
+      expect(target.getCoupone(), 18000);
+    });
+
+    test("3人2泊", () {
+      target.setPerson(1);
+      target.setStay(2);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 84000);
+      expect(target.getPay(), 216000);
+      expect(target.getCoupone(), 36000);
+    });
+    test("3人日帰り高級", () {
+      target.setPerson(1);
+      target.setStay(0);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 21000);
+      expect(target.getPay(), 279000);
+      expect(target.getCoupone(), 9000);
+    });
+
+    test("3人日帰り手頃", () {
+      target.setPerson(3);
+      target.setStay(0);
+      target.setPrice(10000);
+      expect(target.price, 10000);
+
+      expect(target.getMinus(), 3500);
+      expect(target.getPay(), 6500);
+      expect(target.getCoupone(), 2000);
     });
   });
 }
