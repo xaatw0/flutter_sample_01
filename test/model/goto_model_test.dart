@@ -45,7 +45,7 @@ void main() {
       expect(target.getCoupone(), 3000);
     });
 
-    test("1人1泊制限超え", () {
+    test("1人1泊クーポン四捨五入", () {
       target.setPerson(1);
       target.setStay(1);
       target.setPrice(30000);
@@ -54,6 +54,17 @@ void main() {
       expect(target.getMinus(), 10500);
       expect(target.getPay(), 19500);
       expect(target.getCoupone(), 5000);
+    });
+
+    test("1人1泊クーポン制限声", () {
+      target.setPerson(1);
+      target.setStay(1);
+      target.setPrice(100000);
+      expect(target.price, 100000);
+
+      expect(target.getMinus(), 14000);
+      expect(target.getPay(), 86000);
+      expect(target.getCoupone(), 6000);
     });
 
     test("1人2泊", () {});
