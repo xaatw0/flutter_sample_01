@@ -56,7 +56,7 @@ void main() {
       expect(target.getCoupone(), 5000);
     });
 
-    test("1人1泊クーポン制限声", () {
+    test("1人1泊クーポン制限超え", () {
       target.setPerson(1);
       target.setStay(1);
       target.setPrice(100000);

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'dart:math' as Math;
 
 class GotoModel {
   static const PRICE_LIMIT = 20000;
+  static const PRICEDOWN_LIMIT = PRICE_LIMIT * 2;
 
   int _price = 0;
   int _person = 1;
@@ -28,13 +30,8 @@ class GotoModel {
   }
 
   int getMinus() {
-    int max = PRICE_LIMIT * 2;
-    bool isExpensive = max < _price;
-    if (isExpensive) {
-      return (max * 0.35).toInt();
-    }
-
-    return (_price * 0.35).floor();
+    int target = Math.min(_price, PRICEDOWN_LIMIT);
+    return (target * 0.35).floor();
   }
 
   int getPay() {
