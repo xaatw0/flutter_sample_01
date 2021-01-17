@@ -36,6 +36,6 @@ class GotoModel {
   }
 
   int getCoupone() {
-    return (_price * 0.15).floor();
+    return (_price * 0.15 / 1000).round() * 1000;
   }
 }
