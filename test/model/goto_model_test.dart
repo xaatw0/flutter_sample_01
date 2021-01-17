@@ -77,6 +77,15 @@ void main() {
       expect(target.getPay(), 72000);
       expect(target.getCoupone(), 12000);
     });
-    test("1人日帰り", () {});
+    test("1人日帰り", () {
+      target.setPerson(1);
+      target.setStay(0);
+      target.setPrice(100000);
+      expect(target.price, 100000);
+
+      expect(target.getMinus(), 7000);
+      expect(target.getPay(), 93000);
+      expect(target.getCoupone(), 3000);
+    });
   });
 }
