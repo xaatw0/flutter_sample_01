@@ -124,7 +124,7 @@ void main() {
     });
 
     test("3人2泊", () {
-      target.setPerson(1);
+      target.setPerson(3);
       target.setStay(2);
       target.setPrice(300000);
       expect(target.price, 300000);
@@ -134,7 +134,7 @@ void main() {
       expect(target.getCoupone(), 36000);
     });
     test("3人日帰り高級", () {
-      target.setPerson(1);
+      target.setPerson(3);
       target.setStay(0);
       target.setPrice(300000);
       expect(target.price, 300000);
