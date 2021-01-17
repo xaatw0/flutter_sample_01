@@ -3,7 +3,6 @@ import 'dart:math' as Math;
 
 class GotoModel {
   static const PRICE_LIMIT = 20000;
-  static const PRICEDOWN_LIMIT = PRICE_LIMIT * 2;
 
   int _price = 0;
   int _person = 1;
@@ -16,6 +15,8 @@ class GotoModel {
   get price => _price;
   get person => _person;
   get stay => _stay;
+
+  get _priceDownLimit => PRICE_LIMIT * 2 * _stay;
 
   void setPrice(int price) {
     _price = price;
@@ -30,7 +31,7 @@ class GotoModel {
   }
 
   int getMinus() {
-    int target = Math.min(_price, PRICEDOWN_LIMIT);
+    int target = Math.min(_price, _priceDownLimit);
     return (target * 0.35).floor();
   }
 
@@ -39,7 +40,7 @@ class GotoModel {
   }
 
   int getCoupone() {
-    int target = Math.min(_price, PRICEDOWN_LIMIT);
+    int target = Math.min(_price, _priceDownLimit);
     return (target * 0.15 / 1000).round() * 1000;
   }
 }
