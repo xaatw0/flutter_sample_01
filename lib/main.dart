@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:intl/intl.dart';
 
@@ -31,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  GotoModel model = GotoModel();
   int _price = 0;
   int _person = 1;
   int _saty = 0;
@@ -100,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onChanged: (value) {
                       setState(() {
                         _saty = value;
+                        model.setStay(value);
                       });
                     },
                   ),
@@ -128,6 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onChanged: (value) {
                       setState(() {
                         _person = value;
+                        model.setPerson(value);
                       });
                     },
                   ),
@@ -140,6 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
               rightButtonFn: () {
                 setState(() {
                   text = text.substring(0, text.length - 1);
+                  model.setPrice(int.parse(text));
                 });
               },
               rightIcon: Icon(
