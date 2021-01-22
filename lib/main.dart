@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:intl/intl.dart';
 
@@ -31,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  GotoModel model = GotoModel();
   int _price = 0;
   int _person = 1;
   int _saty = 0;
@@ -100,6 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     onChanged: (value) {
                       setState(() {
                         _saty = value;
+                        model.setStay(value);
+                        _calc();
                       });
                     },
                   ),
@@ -128,6 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     onChanged: (value) {
                       setState(() {
                         _person = value;
+                        model.setPerson(value);
+                        _calc();
                       });
                     },
                   ),
@@ -140,6 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
               rightButtonFn: () {
                 setState(() {
                   text = text.substring(0, text.length - 1);
+                  model.setPrice(int.parse(text));
                 });
               },
               rightIcon: Icon(
@@ -247,11 +254,16 @@ class _MyHomePageState extends State<MyHomePage> {
   _onKeyboardTap(String value) {
     setState(() {
       text = text + value;
-      _price = int.parse(text);
-
-      _minus = (_price * 0.35).toInt();
-      _coupon = (_price * 0.15).toInt();
-      _pay = _price - _minus;
+      _calc();
     });
+  }
+
+  _calc() {
+    _price = int.parse(text);
+    model.setPrice(_price);
+
+    _minus = model.getMinus();
+    _coupon = model.getCoupone();
+    _pay = model.getPay();
   }
 }
