@@ -252,7 +252,8 @@ class _MyHomePageState extends State<MyHomePage> {
   _onKeyboardTap(String value) {
     setState(() {
       text = text + value;
-      model.setPrice(int.parse(text));
+      _price = int.parse(text);
+      model.setPrice(_price);
 
       _minus = model.getMinus();
       _coupon = model.getCoupone();
