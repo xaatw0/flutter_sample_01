@@ -103,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       setState(() {
                         _saty = value;
                         model.setStay(value);
+                        _calc();
                       });
                     },
                   ),
@@ -132,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       setState(() {
                         _person = value;
                         model.setPerson(value);
+                        _calc();
                       });
                     },
                   ),
@@ -252,12 +254,16 @@ class _MyHomePageState extends State<MyHomePage> {
   _onKeyboardTap(String value) {
     setState(() {
       text = text + value;
-      _price = int.parse(text);
-      model.setPrice(_price);
-
-      _minus = model.getMinus();
-      _coupon = model.getCoupone();
-      _pay = model.getPay();
+      _calc();
     });
+  }
+
+  _calc() {
+    _price = int.parse(text);
+    model.setPrice(_price);
+
+    _minus = model.getMinus();
+    _coupon = model.getCoupone();
+    _pay = model.getPay();
   }
 }
