@@ -8,14 +8,20 @@ class SelectArea extends StatelessWidget {
       children: [
         Expanded(
             flex: 1,
-            child: SelectButton(
-              Icons.face,
-              "1名",
-              () {},
+            child: Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: SelectButton(
+                Icons.face,
+                "1名",
+                () {},
+              ),
             )),
         Expanded(
           flex: 1,
-          child: SelectButton(Icons.hotel, "1泊2日", () {}),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: SelectButton(Icons.hotel, "1泊2日", () {}),
+          ),
         ),
       ],
     );
