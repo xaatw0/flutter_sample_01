@@ -75,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SelectButton(Icons.face, "1名", () {}),
+            SelectButton(Icons.hotel, "2名", () {}),
             Row(
               children: [
                 Expanded(
