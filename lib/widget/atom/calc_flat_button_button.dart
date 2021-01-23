@@ -12,10 +12,11 @@ class CalcFlatButtonButton extends StatelessWidget {
       child: child,
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60),
         ),
-        primary: Colors.lightBlueAccent,
+        primary: Colors.white,
       ),
     );
   }

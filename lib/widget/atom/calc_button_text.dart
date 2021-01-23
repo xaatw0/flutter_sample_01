@@ -10,7 +10,7 @@ class CalcButtonText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: Colors.white,
+        color: Colors.deepPurple,
       ),
     );
   }
