@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/widget/atom/select_button_button.dart';
+import 'package:flutter_app_01/widget/atom/select_button_icon.dart';
+import 'package:flutter_app_01/widget/atom/select_button_text.dart';
 
 class SelectButton extends StatelessWidget {
   final IconData iconData;
@@ -12,8 +14,12 @@ class SelectButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Row row = Row(
       children: [
-        Icon(iconData),
-        Text(text),
+        SelectButtonIcon(iconData),
+        Expanded(
+          child: Center(
+            child: SelectButtonText(text),
+          ),
+        ),
       ],
     );
 

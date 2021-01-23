@@ -11,6 +11,7 @@ class SelectButtonIcon extends StatelessWidget {
     return Icon(
       iconData,
       size: size,
+      color: Colors.white,
     );
   }
 }
