@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class FunctionButtonButton extends StatelessWidget {
+class CalcFlatButtonButton extends StatelessWidget {
   final Widget child;
   final Function onPressed;
 
-  FunctionButtonButton(this.child, this.onPressed);
+  CalcFlatButtonButton(this.child, this.onPressed);
 
   @override
   Widget build(BuildContext context) {
