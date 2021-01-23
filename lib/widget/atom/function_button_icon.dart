@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FunctionButtonIcon extends StatelessWidget {
   final IconData iconData;
-  final double size = 16;
+  final double size = 24;
 
   FunctionButtonIcon(this.iconData);
 
