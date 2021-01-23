@@ -8,12 +8,14 @@ class SelectButtonButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       child: child,
       onPressed: onPressed,
-      color: Colors.lightBlueAccent,
-      shape: StadiumBorder(
-        side: BorderSide(),
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(60),
+        ),
+        primary: Colors.lightBlueAccent,
       ),
     );
   }
