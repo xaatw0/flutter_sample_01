@@ -75,7 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             SelectButtonText("text"),
             SelectButtonIcon(Icons.home),
-            SelectButtonButton(),
+            SelectButtonButton(
+              Text("test"),
+              () {},
+            ),
             Row(
               children: [
                 Expanded(
