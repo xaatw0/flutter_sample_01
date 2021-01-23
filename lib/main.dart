@@ -3,7 +3,9 @@ import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/atom/select_button_button.dart';
 import 'package:flutter_app_01/widget/atom/select_button_icon.dart';
 import 'package:flutter_app_01/widget/atom/select_button_text.dart';
+import 'package:flutter_app_01/widget/molecule/function_button.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
+import 'package:flutter_app_01/widget/organism/function_area.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:intl/intl.dart';
@@ -76,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SelectArea(),
+            FunctionArea(),
             Row(
               children: [
                 Expanded(
