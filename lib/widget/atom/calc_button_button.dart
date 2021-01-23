@@ -13,9 +13,7 @@ class CalcButtonButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 5,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(60),
-        ),
+        shape: CircleBorder(),
         primary: Colors.white,
       ),
     );

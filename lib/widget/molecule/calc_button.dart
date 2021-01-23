@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/widget/atom/calc_button_button.dart';
 import 'package:flutter_app_01/widget/atom/calc_button_text.dart';
 import 'package:flutter_app_01/widget/atom/calc_flat_button_button.dart';
 import 'package:flutter_app_01/widget/atom/select_button_button.dart';
@@ -23,6 +24,6 @@ class CalButton extends StatelessWidget {
       ],
     );
 
-    return CalcFlatButtonButton(row, onPressed);
+    return CalcButtonButton(row, onPressed);
   }
 }
