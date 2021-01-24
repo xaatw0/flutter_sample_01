@@ -11,23 +11,17 @@ class ResultArea extends StatelessWidget {
           ResultText("総額:"),
           ResultText("123,456"),
         ),
-        Row(
-          children: [
-            ResultText("割引:"),
-            ResultText("123,456"),
-          ],
+        ResultAreaRow(
+          ResultText("割引:"),
+          ResultText("123,456"),
         ),
-        Row(
-          children: [
-            ResultText("支払い:"),
-            ResultText("123,456"),
-          ],
+        ResultAreaRow(
+          ResultText("支払い:"),
+          ResultText("123,456"),
         ),
-        Row(
-          children: [
-            ResultText("クーポン:"),
-            ResultText("123,456"),
-          ],
+        ResultAreaRow(
+          ResultText("クーポン:"),
+          ResultText("123,456"),
         ),
       ],
     );
