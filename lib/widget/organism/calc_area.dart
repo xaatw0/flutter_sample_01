@@ -18,8 +18,17 @@ class CalcArea extends StatelessWidget {
             flex: 2,
             child: Row(
               children: [
-                Expanded(flex: 2, child: CalFlatButton("0", () {})),
-                Expanded(flex: 1, child: CalButton("00", () {})),
+                Expanded(
+                    flex: 2,
+                    child: Padding(
+                        padding: EdgeInsets.all(8),
+                        child: CalFlatButton("0", () {}))),
+                Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CalButton("00", () {}),
+                    )),
               ],
             ),
           )
