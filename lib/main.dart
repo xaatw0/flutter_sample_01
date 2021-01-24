@@ -9,6 +9,7 @@ import 'package:flutter_app_01/widget/molecule/function_button.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 import 'package:flutter_app_01/widget/organism/calc_area.dart';
 import 'package:flutter_app_01/widget/organism/function_area.dart';
+import 'package:flutter_app_01/widget/organism/result_area.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:intl/intl.dart';
@@ -81,16 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SelectArea(),
-            Row(
-              children: [
-                Expanded(
-                  child: CalcArea(),
-                ),
-                SizedBox(
-                  width: 200,
-                ),
-              ],
-            ),
+            ResultArea(),
             Row(
               children: [
                 Expanded(
