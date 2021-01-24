@@ -84,7 +84,16 @@ class _MyHomePageState extends State<MyHomePage> {
             FunctionArea(),
             CalFlatButton("0", () {}),
             CalButton("00", () {}),
-            CalcArea(),
+            Row(
+              children: [
+                Expanded(
+                  child: CalcArea(),
+                ),
+                SizedBox(
+                  width: 200,
+                ),
+              ],
+            ),
             Row(
               children: [
                 Expanded(
