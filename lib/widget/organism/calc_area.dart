@@ -27,7 +27,7 @@ class CalcArea extends StatelessWidget {
               ),
             ],
           ),
-          CalAreaRow(),
+          for (int i = 0; i < 3; i++) CalAreaRow(),
         ],
       ),
     );
