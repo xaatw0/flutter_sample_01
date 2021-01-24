@@ -24,6 +24,6 @@ class CalButton extends StatelessWidget {
       ],
     );
 
-    return CalcButtonButton(row, onPressed);
+    return AspectRatio(aspectRatio: 1, child: CalcButtonButton(row, onPressed));
   }
 }

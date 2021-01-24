@@ -81,9 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SelectArea(),
-            FunctionArea(),
-            CalFlatButton("0", () {}),
-            CalButton("00", () {}),
             Row(
               children: [
                 Expanded(

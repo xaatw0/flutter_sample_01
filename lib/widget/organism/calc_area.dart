@@ -27,7 +27,7 @@ class CalcArea extends StatelessWidget {
               ),
             ],
           ),
-          for (int i = 0; i < 3; i++) CalAreaRow(),
+          for (int i = 0; i < 3; i++) CalAreaRow(i),
         ],
       ),
     );
@@ -35,7 +35,10 @@ class CalcArea extends StatelessWidget {
 }
 
 class CalAreaRow extends StatelessWidget {
-  const CalAreaRow({
+  final int index;
+
+  const CalAreaRow(
+    this.index, {
     Key key,
   }) : super(key: key);
 
@@ -44,7 +47,15 @@ class CalAreaRow extends StatelessWidget {
     return Row(
       children: [
         for (int i = 0; i < 3; i++)
-          Expanded(child: CalButton((i + 1).toString(), () {})),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(8),
+              child: CalButton(
+                (i + 1 + 3 * (2 - index)).toString(),
+                () {},
+              ),
+            ),
+          ),
       ],
     );
   }
