@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/widget/atom/result_text.dart';
+import 'package:flutter_app_01/widget/molecule/result_area_row.dart';
 
 class ResultArea extends StatelessWidget {
   @override
@@ -28,27 +29,6 @@ class ResultArea extends StatelessWidget {
             ResultText("123,456"),
           ],
         ),
-      ],
-    );
-  }
-}
-
-class ResultAreaRow extends StatelessWidget {
-  Widget textAtom;
-  Widget numberAtom;
-
-  ResultAreaRow(
-    this.textAtom,
-    this.numberAtom, {
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(flex: 1, child: textAtom),
-        Expanded(flex: 2, child: numberAtom),
       ],
     );
   }
