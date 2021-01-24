@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/widget/molecule/calc_button.dart';
+import 'package:flutter_app_01/widget/molecule/calc_flat_button.dart';
 import 'package:flutter_app_01/widget/molecule/function_button.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 
@@ -8,7 +9,7 @@ class CalcArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3 / 4.5,
+      aspectRatio: 3 / 6,
       child: Column(
         children: [
           Row(
@@ -28,6 +29,12 @@ class CalcArea extends StatelessWidget {
             ],
           ),
           for (int i = 0; i < 3; i++) CalAreaRow(i),
+          Row(
+            children: [
+              Expanded(child: CalFlatButton("0", () {})),
+              Expanded(child: CalButton("00", () {})),
+            ],
+          )
         ],
       ),
     );
