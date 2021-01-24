@@ -27,14 +27,25 @@ class CalcArea extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: [
-              for (int i = 0; i < 3; i++)
-                Expanded(child: CalButton((i + 1).toString(), () {})),
-            ],
-          ),
+          CalAreaRow(),
         ],
       ),
+    );
+  }
+}
+
+class CalAreaRow extends StatelessWidget {
+  const CalAreaRow({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        for (int i = 0; i < 3; i++)
+          Expanded(child: CalButton((i + 1).toString(), () {})),
+      ],
     );
   }
 }
