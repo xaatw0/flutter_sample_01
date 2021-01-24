@@ -5,11 +5,11 @@ import 'package:flutter_app_01/widget/atom/select_button_button.dart';
 import 'package:flutter_app_01/widget/atom/select_button_icon.dart';
 import 'package:flutter_app_01/widget/atom/select_button_text.dart';
 
-class CalFlatButton extends StatelessWidget {
+class CalcFlatButton extends StatelessWidget {
   final String text;
   final Function onPressed;
 
-  CalFlatButton(this.text, this.onPressed);
+  CalcFlatButton(this.text, this.onPressed);
 
   @override
   Widget build(BuildContext context) {
