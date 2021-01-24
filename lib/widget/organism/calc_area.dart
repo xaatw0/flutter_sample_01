@@ -27,7 +27,12 @@ class CalcArea extends StatelessWidget {
               ),
             ],
           ),
-          Expanded(child: CalButton("1", () {})),
+          Row(
+            children: [
+              for (int i = 0; i < 3; i++)
+                Expanded(child: CalButton((i + 1).toString(), () {})),
+            ],
+          ),
         ],
       ),
     );
