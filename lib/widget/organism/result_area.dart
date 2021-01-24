@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/widget/atom/result_accent_text.dart';
 import 'package:flutter_app_01/widget/atom/result_text.dart';
 import 'package:flutter_app_01/widget/molecule/result_area_row.dart';
 
@@ -16,8 +17,8 @@ class ResultArea extends StatelessWidget {
           ResultText("123,456"),
         ),
         ResultAreaRow(
-          ResultText("支払い:"),
-          ResultText("123,456"),
+          ResultAccentText("支払い:"),
+          ResultAccentText("123,456"),
         ),
         ResultAreaRow(
           ResultText("クーポン:"),
