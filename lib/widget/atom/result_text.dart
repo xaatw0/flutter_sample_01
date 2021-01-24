@@ -10,7 +10,10 @@ class ResultText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.kosugiMaru(),
+      style: GoogleFonts.kosugiMaru(
+        fontSize: 24,
+        fontWeight: FontWeight.w300,
+      ),
     );
   }
 }
