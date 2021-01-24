@@ -6,11 +6,9 @@ class ResultArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            ResultText("総額:"),
-            ResultText("123,456"),
-          ],
+        ResultAreaRow(
+          ResultText("総額:"),
+          ResultText("123,456"),
         ),
         Row(
           children: [
@@ -30,6 +28,27 @@ class ResultArea extends StatelessWidget {
             ResultText("123,456"),
           ],
         ),
+      ],
+    );
+  }
+}
+
+class ResultAreaRow extends StatelessWidget {
+  Widget textAtom;
+  Widget numberAtom;
+
+  ResultAreaRow(
+    this.textAtom,
+    this.numberAtom, {
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        textAtom,
+        numberAtom,
       ],
     );
   }
