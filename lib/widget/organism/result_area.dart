@@ -9,25 +9,25 @@ class ResultArea extends StatelessWidget {
         Row(
           children: [
             ResultText("総額:"),
-            ResultText("text"),
+            ResultText("123,456"),
           ],
         ),
         Row(
           children: [
             ResultText("割引:"),
-            ResultText("text"),
+            ResultText("123,456"),
           ],
         ),
         Row(
           children: [
             ResultText("支払い:"),
-            ResultText("text"),
+            ResultText("123,456"),
           ],
         ),
         Row(
           children: [
             ResultText("クーポン:"),
-            ResultText("text"),
+            ResultText("123,456"),
           ],
         ),
       ],
