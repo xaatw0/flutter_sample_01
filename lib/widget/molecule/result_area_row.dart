@@ -11,14 +11,14 @@ class ResultAreaRow extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Align(
             alignment: Alignment.centerRight,
             child: textAtom,
           ),
         ),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: Align(
             alignment: Alignment.centerRight,
             child: numberAtom,

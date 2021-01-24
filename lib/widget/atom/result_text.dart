@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ResultText extends StatelessWidget {
   final String text;
@@ -7,6 +8,12 @@ class ResultText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    return Text(
+      text,
+      style: GoogleFonts.kosugiMaru(
+        fontSize: 24,
+        fontWeight: FontWeight.w300,
+      ),
+    );
   }
 }
