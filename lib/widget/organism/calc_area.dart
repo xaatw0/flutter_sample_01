@@ -9,34 +9,48 @@ class CalcArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3 / 6,
+      aspectRatio: 3 / 4.5,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: FunctionButton(
-                  Icons.clear,
-                  () {},
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: FunctionButton(Icons.arrow_left, () {}),
-              ),
-            ],
-          ),
-          for (int i = 0; i < 3; i++) CalAreaRow(i),
-          Row(
-            children: [
-              Expanded(child: CalFlatButton("0", () {})),
-              Expanded(child: CalButton("00", () {})),
-            ],
+          Expanded(flex: 1, child: FunctionArea()),
+          for (int i = 0; i < 3; i++) Expanded(flex: 2, child: CalAreaRow(i)),
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                Expanded(flex: 2, child: CalFlatButton("0", () {})),
+                Expanded(flex: 1, child: CalButton("00", () {})),
+              ],
+            ),
           )
         ],
       ),
+    );
+  }
+}
+
+class FunctionArea extends StatelessWidget {
+  const FunctionArea({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: FunctionButton(
+            Icons.clear,
+            () {},
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: FunctionButton(Icons.arrow_left, () {}),
+        ),
+      ],
     );
   }
 }
