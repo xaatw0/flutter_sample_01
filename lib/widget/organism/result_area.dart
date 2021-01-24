@@ -47,8 +47,8 @@ class ResultAreaRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        textAtom,
-        numberAtom,
+        Expanded(flex: 1, child: textAtom),
+        Expanded(flex: 2, child: numberAtom),
       ],
     );
   }
