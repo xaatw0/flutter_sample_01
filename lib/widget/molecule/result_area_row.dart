@@ -18,8 +18,12 @@ class ResultAreaRow extends StatelessWidget {
           ),
         ),
         Expanded(
-            flex: 2,
-            child: Align(alignment: Alignment.centerRight, child: numberAtom)),
+          flex: 2,
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: numberAtom,
+          ),
+        ),
       ],
     );
   }
