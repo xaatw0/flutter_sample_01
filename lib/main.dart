@@ -81,8 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SelectArea(),
-            ResultArea(),
+            /**
             Row(
               children: [
                 Expanded(
@@ -257,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text("${formatter.format(_coupon)}"),
                 ),
               ],
-            ),
+            ),**/
           ],
         ),
       ),
