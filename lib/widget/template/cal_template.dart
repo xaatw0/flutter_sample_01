@@ -10,21 +10,42 @@ class CalcTemplate extends StatelessWidget {
       children: [
         Expanded(
           flex: 3,
-          child: Container(
-            color: Colors.white24,
-            child: Column(
-              children: [
-                SelectArea(),
-                CalcArea(),
-              ],
-            ),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(),
+              ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  color: Colors.white24,
+                  child: Column(
+                    children: [
+                      SelectArea(),
+                      CalcArea(),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(),
+              ),
+            ],
           ),
         ),
         Expanded(
             flex: 1,
             child: Container(
               color: Colors.lightBlue,
-              child: ResultArea(),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16,
+                  horizontal: 32,
+                ),
+                child: ResultArea(),
+              ),
             )),
       ],
     );
