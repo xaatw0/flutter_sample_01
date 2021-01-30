@@ -15,9 +15,13 @@ enum CalcKey {
 }
 
 class CalcModel {
-  int _value;
+  int _value = 0;
 
   get value => _value;
 
-  void push(CalcKey key) {}
+  void push(CalcKey key) {
+    if (key.index < CalcKey.KEY_00.index) {
+      _value = _value * 10 + key.index;
+    }
+  }
 }
