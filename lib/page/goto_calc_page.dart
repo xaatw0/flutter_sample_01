@@ -3,16 +3,16 @@ import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/template/cal_template.dart';
 import 'package:intl/intl.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class GotoCalcPage extends StatefulWidget {
+  GotoCalcPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _GotoCalcPageState createState() => _GotoCalcPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _GotoCalcPageState extends State<GotoCalcPage> {
   GotoModel model = GotoModel();
   int _price = 0;
   int _person = 1;
