@@ -14,4 +14,10 @@ enum CalcKey {
   KEY_CLEAR,
 }
 
-class CalcModel {}
+class CalcModel {
+  int _value;
+
+  get value => _value;
+
+  void push(CalcKey key) {}
+}
