@@ -11,9 +11,13 @@ void main() {
   });
 
   group("CalcEnumのテスト", () {
-    test("価", () {
+    test("値", () {
       expect(CalcKey.KEY_0.index, 0);
       expect(CalcKey.KEY_1.index, 1);
+      expect(CalcKey.KEY_9.index, 9);
+      expect(CalcKey.KEY_00.index, 10);
+      expect(CalcKey.KEY_DEL.index, 11);
+      expect(CalcKey.KEY_CLEAR.index, 12);
     });
   });
   test("インデックス", () {
