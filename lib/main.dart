@@ -11,6 +11,7 @@ import 'package:flutter_app_01/widget/organism/calc_area.dart';
 import 'package:flutter_app_01/widget/organism/function_area.dart';
 import 'package:flutter_app_01/widget/organism/result_area.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
+import 'package:flutter_app_01/widget/template/cal_template.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:intl/intl.dart';
 
@@ -77,12 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
+      body: CalcTemplate(),
+      /*
+      Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SelectArea(),
-            ResultArea(),
             Row(
               children: [
                 Expanded(
@@ -260,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
 
