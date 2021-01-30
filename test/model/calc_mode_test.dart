@@ -21,6 +21,6 @@ void main() {
     });
   });
   test("インデックス", () {
-    expect(target.price, 0);
+    expect(CalcKey.values[0], CalcKey.KEY_0);
   });
 }
