@@ -22,6 +22,12 @@ class CalcModel {
   void push(CalcKey key) {
     if (key.index < CalcKey.KEY_00.index) {
       _value = _value * 10 + key.index;
+    } else if (key == CalcKey.KEY_00) {
+      _value = _value * 100;
+    } else if (key == CalcKey.KEY_DEL) {
+      _value = (_value / 10).toInt();
+    } else if (key == CalcKey.KEY_CLEAR) {
+      _value = 0;
     }
   }
 }

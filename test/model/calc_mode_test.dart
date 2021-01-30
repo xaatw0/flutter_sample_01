@@ -55,5 +55,29 @@ void main() {
       target.push(CalcKey.KEY_00);
       expect(target.value, 123456789000);
     });
+    test("削除", () {
+      expect(target.value, 0);
+      target.push(CalcKey.KEY_1);
+      target.push(CalcKey.KEY_1);
+      target.push(CalcKey.KEY_1);
+      expect(target.value, 111);
+      target.push(CalcKey.KEY_DEL);
+      expect(target.value, 11);
+      target.push(CalcKey.KEY_DEL);
+      expect(target.value, 1);
+      target.push(CalcKey.KEY_DEL);
+      expect(target.value, 0);
+      target.push(CalcKey.KEY_DEL);
+      expect(target.value, 0);
+    });
+
+    test("クリア", () {
+      expect(target.value, 0);
+      target.push(CalcKey.KEY_1);
+      target.push(CalcKey.KEY_1);
+      expect(target.value, 11);
+      target.push(CalcKey.KEY_CLEAR);
+      expect(target.value, 0);
+    });
   });
 }
