@@ -13,3 +13,5 @@ enum CalcKey {
   KEY_DEL,
   KEY_CLEAR,
 }
+
+class CalcModel {}
