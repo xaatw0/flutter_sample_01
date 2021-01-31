@@ -7,7 +7,11 @@ class SelectArea extends StatelessWidget {
   SelectArea(this._gotoModel);
 
   List<String> lstPeople = [for (int i = 0; i < 11; i++) "${i + 1}名"];
-  List<String> lstStay = ["日帰り"]
+  List<String> lstStay = [
+    "日帰り",
+    ...[for (int i = 0; i < 7; i++) "${i + 1}泊${i + 2}日"],
+    "8泊以上"
+  ];
 
   @override
   Widget build(BuildContext context) {
