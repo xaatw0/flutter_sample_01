@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/model/calc_model.dart';
 import 'package:flutter_app_01/widget/molecule/function_button.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class FunctionArea extends StatelessWidget {
+class FunctionArea extends HookWidget {
+  final CalcModel model;
+
+  FunctionArea(this.model);
+
   @override
   Widget build(BuildContext context) {
     return Row(

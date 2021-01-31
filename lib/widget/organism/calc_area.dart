@@ -23,7 +23,7 @@ class CalcArea extends HookWidget {
       aspectRatio: 3 / 4.5,
       child: Column(
         children: [
-          Expanded(flex: 1, child: FunctionArea()),
+          Expanded(flex: 1, child: FunctionArea(model)),
           for (int i = 0; i < 3; i++)
             Expanded(flex: 2, child: CalAreaRow(model, i)),
           Expanded(
