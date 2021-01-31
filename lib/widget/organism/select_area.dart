@@ -6,6 +6,9 @@ class SelectArea extends StatelessWidget {
   GotoModel _gotoModel;
   SelectArea(this._gotoModel);
 
+  List<String> lstPeople = [for (int i = 0; i < 11; i++) "${i + 1}名"];
+  List<String> lstStay = ["日帰り"]
+
   @override
   Widget build(BuildContext context) {
     return Row(
