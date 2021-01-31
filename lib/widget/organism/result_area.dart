@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_01/widget/atom/result_accent_text.dart';
 import 'package:flutter_app_01/widget/atom/result_text.dart';
 import 'package:flutter_app_01/widget/molecule/result_area_row.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class ResultArea extends StatelessWidget {
+class ResultArea extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
