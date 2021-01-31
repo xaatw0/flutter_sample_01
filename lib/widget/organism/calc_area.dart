@@ -65,7 +65,10 @@ class CalAreaRow extends HookWidget {
               padding: EdgeInsets.all(8),
               child: CalcButton(
                 (i + 1 + 3 * (2 - index)).toString(),
-                () {},
+                () {
+                  int value = i + 1 + 3 * (2 - index);
+                  model.push(CalcKey.values[value]);
+                },
               ),
             ),
           ),
