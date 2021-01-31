@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/model/calc_model.dart';
 import 'package:flutter_app_01/widget/molecule/calc_button.dart';
 import 'package:flutter_app_01/widget/molecule/calc_flat_button.dart';
 import 'package:flutter_app_01/widget/molecule/function_button.dart';
@@ -9,6 +10,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'function_area.dart';
 
 class CalcArea extends HookWidget {
+  CalcModel model = CalcModel();
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
