@@ -11,8 +11,6 @@ import 'package:hooks_riverpod/all.dart';
 
 import 'function_area.dart';
 
-final priceProvider = StateNotifierProvider((_) => PriceNotifer());
-
 class CalcArea extends HookWidget {
   CalcModel model = CalcModel();
 
