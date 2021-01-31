@@ -13,5 +13,11 @@ class GotoResult {
 
 class ResultNotifer extends StateNotifier<GotoResult> {
   ResultNotifer() : super(GotoResult(minus: 0, pay: 0, coupone: 0));
-  void setPrice(GotoModel model) {}
+  void update(GotoModel model) {
+    state = GotoResult(
+      minus: model.getMinus(),
+      pay: model.getPay(),
+      coupone: model.getCoupone(),
+    );
+  }
 }

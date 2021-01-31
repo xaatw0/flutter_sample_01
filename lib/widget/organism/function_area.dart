@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/calc_model.dart';
+import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/molecule/function_button.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -9,7 +10,8 @@ import 'package:flutter_app_01/notifier/price_notifier.dart';
 
 class FunctionArea extends HookWidget {
   final CalcModel model;
-  FunctionArea(this.model);
+  final GotoModel _gotoModel;
+  FunctionArea(this.model, this._gotoModel);
 
   @override
   Widget build(BuildContext context) {
