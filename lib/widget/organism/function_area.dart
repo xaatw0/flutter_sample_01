@@ -7,6 +7,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/all.dart';
 import 'package:flutter_app_01/notifier/price_notifier.dart';
+import 'package:flutter_app_01/notifier/result_notifier.dart';
 
 class FunctionArea extends HookWidget {
   final CalcModel model;
@@ -16,6 +17,7 @@ class FunctionArea extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final price = useProvider(priceProvider);
+    final result = useProvider(resultProvider);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,6 +37,8 @@ class FunctionArea extends HookWidget {
           child: FunctionButton(Icons.arrow_left, () {
             model.push(CalcKey.KEY_DEL);
             price.setPrice(model.value);
+            _gotoModel.setPrice(model.value);
+            result.update(_gotoModel);
           }),
         ),
       ],
