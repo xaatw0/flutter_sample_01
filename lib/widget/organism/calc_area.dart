@@ -19,7 +19,8 @@ class CalcArea extends HookWidget {
       child: Column(
         children: [
           Expanded(flex: 1, child: FunctionArea()),
-          for (int i = 0; i < 3; i++) Expanded(flex: 2, child: CalAreaRow(i)),
+          for (int i = 0; i < 3; i++)
+            Expanded(flex: 2, child: CalAreaRow(model, i)),
           Expanded(
             flex: 2,
             child: Row(
@@ -46,8 +47,10 @@ class CalcArea extends HookWidget {
 
 class CalAreaRow extends HookWidget {
   final int index;
+  final CalcModel model;
 
   const CalAreaRow(
+    this.model,
     this.index, {
     Key key,
   }) : super(key: key);
