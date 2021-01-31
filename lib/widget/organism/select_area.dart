@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 
 class SelectArea extends StatelessWidget {
+  GotoModel _gotoModel;
+  SelectArea(this._gotoModel);
+
   @override
   Widget build(BuildContext context) {
     return Row(

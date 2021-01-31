@@ -15,7 +15,9 @@ import 'function_area.dart';
 
 class CalcArea extends HookWidget {
   CalcModel model = CalcModel();
-  GotoModel _gotoModel = GotoModel();
+  final GotoModel _gotoModel;
+
+  CalcArea(this._gotoModel);
 
   @override
   Widget build(BuildContext context) {
