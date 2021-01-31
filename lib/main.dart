@@ -13,7 +13,7 @@ import 'package:flutter_app_01/widget/organism/function_area.dart';
 import 'package:flutter_app_01/widget/organism/result_area.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
 import 'package:flutter_app_01/widget/template/cal_template.dart';
-import 'package:flutter_riverpod/all.dart';
+import 'package:hooks_riverpod/all.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:intl/intl.dart';
 
