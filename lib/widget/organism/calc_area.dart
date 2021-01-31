@@ -18,6 +18,7 @@ class CalcArea extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final price = useProvider(priceProvider);
     final state = useProvider(priceProvider.state);
 
     return AspectRatio(
@@ -35,12 +36,18 @@ class CalcArea extends HookWidget {
                     flex: 2,
                     child: Padding(
                         padding: EdgeInsets.all(8),
-                        child: CalcFlatButton(state.toString(), () {}))),
+                        child: CalcFlatButton("0", () {
+                          model.push(CalcKey.KEY_0);
+                          price.setPrice(model.value);
+                        }))),
                 Expanded(
                     flex: 1,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CalcButton("00", () {}),
+                      child: CalcButton("00", () {
+                        model.push(CalcKey.KEY_00);
+                        price.setPrice(model.value);
+                      }),
                     )),
               ],
             ),
