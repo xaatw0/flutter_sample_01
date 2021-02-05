@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/calc_model.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
-import 'package:flutter_app_01/notifier/price_notifier.dart';
+import 'package:flutter_app_01/notifier/int_value_notifier.dart';
 import 'package:flutter_app_01/notifier/result_notifier.dart';
 import 'package:flutter_app_01/widget/molecule/calc_button.dart';
 import 'package:flutter_app_01/widget/molecule/calc_flat_button.dart';
@@ -42,7 +42,7 @@ class CalcArea extends HookWidget {
                         padding: EdgeInsets.all(8),
                         child: CalcFlatButton("0", () {
                           model.push(CalcKey.KEY_0);
-                          price.setPrice(model.value);
+                          price.setValue(model.value);
                           _gotoModel.setPrice(model.value);
                           result.update(_gotoModel);
                         }))),
@@ -52,7 +52,7 @@ class CalcArea extends HookWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: CalcButton("00", () {
                         model.push(CalcKey.KEY_00);
-                        price.setPrice(model.value);
+                        price.setValue(model.value);
                         _gotoModel.setPrice(model.value);
                         result.update(_gotoModel);
                       }),
@@ -94,7 +94,7 @@ class CalAreaRow extends HookWidget {
                 () {
                   int value = i + 1 + 3 * (2 - index);
                   model.push(CalcKey.values[value]);
-                  price.setPrice(model.value);
+                  price.setValue(model.value);
                   _gotoModel.setPrice(model.value);
                   result.update(_gotoModel);
                 },

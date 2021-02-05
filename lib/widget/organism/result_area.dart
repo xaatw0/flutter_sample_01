@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_01/notifier/price_notifier.dart';
+import 'package:flutter_app_01/notifier/int_value_notifier.dart';
 import 'package:flutter_app_01/notifier/result_notifier.dart';
 import 'package:flutter_app_01/widget/atom/result_accent_text.dart';
 import 'package:flutter_app_01/widget/atom/result_text.dart';
