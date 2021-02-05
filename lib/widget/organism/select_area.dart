@@ -65,8 +65,13 @@ class SelectArea extends HookWidget {
                   context: context,
                   title: '宿泊日数',
                   message: '宿泊する日数を選んでください',
+                  initialSelectedActionKey: stayState,
                   actions: createDialogSelect(lstStay),
                 );
+                if (index == null) {
+                  return;
+                }
+
                 stay.setValue(index);
 
                 _gotoModel.setStay(index);
