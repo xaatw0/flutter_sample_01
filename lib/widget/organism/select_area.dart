@@ -25,8 +25,8 @@ class SelectArea extends StatelessWidget {
               child: SelectButton(
                 Icons.face,
                 "1名",
-                () {
-                  showConfirmationDialog<int>(
+                () async {
+                  int result = await showConfirmationDialog<int>(
                     context: context,
                     title: '人数',
                     message: '宿泊する人数を選んでください',
@@ -40,6 +40,7 @@ class SelectArea extends StatelessWidget {
                       ),
                     ],
                   );
+                  print(result);
                 },
               ),
             )),
