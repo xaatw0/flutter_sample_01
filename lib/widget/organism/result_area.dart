@@ -7,31 +7,34 @@ import 'package:flutter_app_01/widget/molecule/result_area_row.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/all.dart';
+import 'package:intl/intl.dart';
 import 'calc_area.dart';
 
 class ResultArea extends HookWidget {
+  final formatter = NumberFormat("#,###");
+
   @override
   Widget build(BuildContext context) {
-    final state = useProvider(priceProvider.state);
+    final price = useProvider(priceProvider.state);
     final result = useProvider(resultProvider.state);
 
     return Column(
       children: [
         ResultAreaRow(
           ResultText("総額:"),
-          ResultText(state.toString()),
+          ResultText(formatter.format(price)),
         ),
         ResultAreaRow(
           ResultText("割引:"),
-          ResultText(result.minus.toString()),
+          ResultText(formatter.format(result.minus)),
         ),
         ResultAreaRow(
           ResultAccentText("支払い:"),
-          ResultAccentText(result.pay.toString()),
+          ResultAccentText(formatter.format(result.pay)),
         ),
         ResultAreaRow(
           ResultText("クーポン:"),
-          ResultText(result.coupone.toString()),
+          ResultText(formatter.format(result.coupone)),
         ),
       ],
     );
