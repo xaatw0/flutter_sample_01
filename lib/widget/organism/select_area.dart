@@ -1,3 +1,4 @@
+import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
@@ -24,7 +25,22 @@ class SelectArea extends StatelessWidget {
               child: SelectButton(
                 Icons.face,
                 "1名",
-                () {},
+                () {
+                  showConfirmationDialog<int>(
+                    context: context,
+                    title: '人数',
+                    message: '宿泊する人数を選んでください',
+                    actions: [
+                      ...List.generate(
+                        lstPeople.length,
+                        (index) => AlertDialogAction(
+                          label: '${lstPeople[index]}',
+                          key: index,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             )),
         Expanded(
