@@ -36,15 +36,7 @@ class SelectArea extends HookWidget {
                     context: context,
                     title: '人数',
                     message: '宿泊する人数を選んでください',
-                    actions: [
-                      ...List.generate(
-                        lstPeople.length,
-                        (index) => AlertDialogAction(
-                          label: '${lstPeople[index]}',
-                          key: index,
-                        ),
-                      ),
-                    ],
+                    actions: createDialogSelect(lstPeople),
                   );
                   people.setpeople(result);
                 },
@@ -58,6 +50,16 @@ class SelectArea extends HookWidget {
           ),
         ),
       ],
+    );
+  }
+
+  List<AlertDialogAction<int>> createDialogSelect(List<String> list) {
+    return List.generate(
+      list.length,
+      (index) => AlertDialogAction(
+        label: '${list[index]}',
+        key: index,
+      ),
     );
   }
 }
