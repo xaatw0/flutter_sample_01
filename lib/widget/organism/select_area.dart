@@ -40,7 +40,7 @@ class SelectArea extends HookWidget {
                     message: '宿泊する人数を選んでください',
                     actions: createDialogSelect(lstPeople),
                   );
-                  people.setpeople(result);
+                  people.setValue(result);
                 },
               ),
             )),
@@ -58,7 +58,7 @@ class SelectArea extends HookWidget {
                   message: '宿泊する日数を選んでください',
                   actions: createDialogSelect(lstStay),
                 );
-                stay.setpeople(result);
+                stay.setValue(result);
               },
             ),
           ),
