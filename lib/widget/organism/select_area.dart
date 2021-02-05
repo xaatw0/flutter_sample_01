@@ -21,6 +21,8 @@ class SelectArea extends HookWidget {
   Widget build(BuildContext context) {
     final people = useProvider(peopleProvider);
     final peopleState = useProvider(peopleProvider.state);
+    final stay = useProvider(stayProvider);
+    final stayState = useProvider(stayProvider.state);
 
     return Row(
       children: [
