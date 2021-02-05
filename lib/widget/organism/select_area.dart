@@ -48,7 +48,19 @@ class SelectArea extends HookWidget {
           flex: 1,
           child: Padding(
             padding: const EdgeInsets.only(left: 8.0),
-            child: SelectButton(Icons.hotel, "1泊2日", () {}),
+            child: SelectButton(
+              Icons.hotel,
+              lstStay[stayState],
+              () async {
+                int result = await showConfirmationDialog<int>(
+                  context: context,
+                  title: '宿泊日数',
+                  message: '宿泊する日数を選んでください',
+                  actions: createDialogSelect(lstStay),
+                );
+                stay.setpeople(result);
+              },
+            ),
           ),
         ),
       ],
