@@ -40,8 +40,12 @@ class SelectArea extends HookWidget {
                     context: context,
                     title: '人数',
                     message: '宿泊する人数を選んでください',
+                    initialSelectedActionKey: peopleState,
                     actions: createDialogSelect(lstPeople),
                   );
+                  if (index == null) {
+                    return;
+                  }
                   people.setValue(index);
 
                   _gotoModel.setPerson(index + 1);
