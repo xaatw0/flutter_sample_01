@@ -1,8 +1,10 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
+import 'package:flutter_app_01/notifier/people_notifier.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/all.dart';
 
 class SelectArea extends HookWidget {
   GotoModel _gotoModel;
@@ -17,6 +19,9 @@ class SelectArea extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final people = useProvider(peopleProvider);
+    final peopleState = useProvider(peopleProvider.state);
+
     return Row(
       children: [
         Expanded(
@@ -25,7 +30,7 @@ class SelectArea extends HookWidget {
               padding: const EdgeInsets.only(right: 8.0),
               child: SelectButton(
                 Icons.face,
-                "1名",
+                lstPeople[peopleState],
                 () async {
                   int result = await showConfirmationDialog<int>(
                     context: context,
@@ -41,7 +46,7 @@ class SelectArea extends HookWidget {
                       ),
                     ],
                   );
-                  print(result);
+                  people.setpeople(result);
                 },
               ),
             )),
