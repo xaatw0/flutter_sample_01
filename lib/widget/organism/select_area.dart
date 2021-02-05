@@ -57,13 +57,16 @@ class SelectArea extends HookWidget {
               Icons.hotel,
               lstStay[stayState],
               () async {
-                int result = await showConfirmationDialog<int>(
+                int index = await showConfirmationDialog<int>(
                   context: context,
                   title: '宿泊日数',
                   message: '宿泊する日数を選んでください',
                   actions: createDialogSelect(lstStay),
                 );
-                stay.setValue(result);
+                stay.setValue(index);
+
+                _gotoModel.setStay(index);
+                result.update(_gotoModel);
               },
             ),
           ),
