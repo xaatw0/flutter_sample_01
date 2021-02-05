@@ -43,6 +43,9 @@ class SelectArea extends HookWidget {
                     actions: createDialogSelect(lstPeople),
                   );
                   people.setValue(index);
+
+                  _gotoModel.setPerson(index + 1);
+                  result.update(_gotoModel);
                 },
               ),
             )),
