@@ -29,6 +29,8 @@ class FunctionArea extends HookWidget {
             () {
               model.push(CalcKey.KEY_CLEAR);
               price.setValue(model.value);
+              _gotoModel.setPrice(model.value);
+              result.update(_gotoModel);
             },
           ),
         ),
