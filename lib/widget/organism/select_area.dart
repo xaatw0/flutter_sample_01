@@ -2,8 +2,9 @@ import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class SelectArea extends StatelessWidget {
+class SelectArea extends HookWidget {
   GotoModel _gotoModel;
   SelectArea(this._gotoModel);
 
