@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 
 class SelectButtonButton extends StatelessWidget {
   final Widget child;
@@ -15,7 +16,7 @@ class SelectButtonButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60),
         ),
-        primary: Colors.lightBlueAccent,
+        primary: lightThema.base,
       ),
     );
   }

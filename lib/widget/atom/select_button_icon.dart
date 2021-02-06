@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 
 class SelectButtonIcon extends StatelessWidget {
   final IconData iconData;
@@ -11,7 +12,7 @@ class SelectButtonIcon extends StatelessWidget {
     return Icon(
       iconData,
       size: size,
-      color: Colors.white,
+      color: lightThema.sub,
     );
   }
 }

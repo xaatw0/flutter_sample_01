@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../color_pallet.dart';
+
 class SelectButtonText extends StatelessWidget {
   final String text;
 
@@ -10,7 +12,7 @@ class SelectButtonText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: Colors.white,
+        color: lightThema.sub,
       ),
     );
   }

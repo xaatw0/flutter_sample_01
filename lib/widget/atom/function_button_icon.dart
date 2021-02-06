@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 
 class FunctionButtonIcon extends StatelessWidget {
   final IconData iconData;
@@ -11,7 +12,7 @@ class FunctionButtonIcon extends StatelessWidget {
     return Icon(
       iconData,
       size: size,
-      color: Colors.white,
+      color: lightThema.base,
     );
   }
 }
