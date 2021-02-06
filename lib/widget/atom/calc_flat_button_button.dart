@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 
 class CalcFlatButtonButton extends StatelessWidget {
   final Widget child;
@@ -16,7 +17,7 @@ class CalcFlatButtonButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60),
         ),
-        primary: Colors.white,
+        primary: lightThema.sub,
       ),
     );
   }

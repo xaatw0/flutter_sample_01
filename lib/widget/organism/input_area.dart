@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
 
@@ -15,12 +16,14 @@ class InputArea extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: Container(),
+            child: Container(
+              color: lightThema.sub,
+            ),
           ),
           Expanded(
             flex: 3,
             child: Container(
-              color: Colors.white24,
+              color: lightThema.sub,
               child: Column(
                 children: [
                   SelectArea(_gotoModel),
@@ -31,7 +34,9 @@ class InputArea extends StatelessWidget {
           ),
           Expanded(
             flex: 1,
-            child: Container(),
+            child: Container(
+              color: lightThema.sub,
+            ),
           ),
         ],
       ),

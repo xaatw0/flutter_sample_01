@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 import 'package:flutter_app_01/widget/organism/calc_area.dart';
 import 'package:flutter_app_01/widget/organism/input_area.dart';
 import 'package:flutter_app_01/widget/organism/result_area.dart';
@@ -13,7 +14,7 @@ class CalcTemplate extends StatelessWidget {
         Expanded(
             flex: 1,
             child: Container(
-              color: Colors.lightBlue,
+              color: lightThema.base,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   vertical: 16,
