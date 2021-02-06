@@ -10,7 +10,16 @@ class ColorPallet {
   final Color background;
 
   ColorPallet(this.base, this.accent, this.sub, this.background);
+
+  static _hexToColor(String hex) {
+    String hexString = hex.replaceAll("#", "");
+    return Color(int.parse("0xff${hexString}"));
+  }
 }
 
-ColorPallet lightThema =
-    ColorPallet(kColorBase, kColorAccent, kColorSub, kColorBackground);
+ColorPallet lightThema = ColorPallet(
+  ColorPallet._hexToColor(kColorBase),
+  ColorPallet._hexToColor(kColorAccent),
+  ColorPallet._hexToColor(kColorSub),
+  ColorPallet._hexToColor(kColorBackground),
+);
