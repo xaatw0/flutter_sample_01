@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 
 class CalcButtonButton extends StatelessWidget {
   final Widget child;
@@ -14,7 +15,7 @@ class CalcButtonButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 5,
         shape: CircleBorder(),
-        primary: Colors.white,
+        primary: lightThema.sub,
       ),
     );
   }
