@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CalcButtonText extends StatelessWidget {
   final String text;
+  final ColorPallet colorPallet;
 
-  CalcButtonText(this.text);
+  CalcButtonText(this.text, this.colorPallet);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CalcButtonText extends StatelessWidget {
       style: GoogleFonts.kosugiMaru(
         fontSize: 30,
         fontWeight: FontWeight.w300,
-        color: lightThema.base,
+        color: colorPallet.base,
       ),
     );
   }

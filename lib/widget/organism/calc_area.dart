@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 import 'package:flutter_app_01/model/calc_model.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/notifier/int_value_notifier.dart';
 import 'package:flutter_app_01/notifier/result_notifier.dart';
+import 'package:flutter_app_01/notifier/theme_notifier.dart';
 import 'package:flutter_app_01/widget/molecule/calc_button.dart';
 import 'package:flutter_app_01/widget/molecule/calc_flat_button.dart';
 import 'package:flutter_app_01/widget/molecule/function_button.dart';
@@ -24,6 +26,7 @@ class CalcArea extends HookWidget {
     final price = useProvider(priceProvider);
     final state = useProvider(priceProvider.state);
     final result = useProvider(resultProvider);
+    final colorPallet = useProvider(themeProvider).state;
 
     return AspectRatio(
       aspectRatio: 3 / 4.5,
@@ -37,25 +40,31 @@ class CalcArea extends HookWidget {
             child: Row(
               children: [
                 Expanded(
-                    flex: 2,
-                    child: Padding(
-                        padding: EdgeInsets.all(8),
-                        child: CalcFlatButton("0", () {
-                          model.push(CalcKey.KEY_0);
-                          price.setValue(model.value);
-                          _gotoModel.setPrice(model.value);
-                          result.update(_gotoModel);
-                        }))),
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.all(8),
+                    child: CalcFlatButton("0", () {
+                      model.push(CalcKey.KEY_0);
+                      price.setValue(model.value);
+                      _gotoModel.setPrice(model.value);
+                      result.update(_gotoModel);
+                    }, colorPallet),
+                  ),
+                ),
                 Expanded(
                     flex: 1,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CalcButton("00", () {
-                        model.push(CalcKey.KEY_00);
-                        price.setValue(model.value);
-                        _gotoModel.setPrice(model.value);
-                        result.update(_gotoModel);
-                      }),
+                      child: CalcButton(
+                        "00",
+                        () {
+                          model.push(CalcKey.KEY_00);
+                          price.setValue(model.value);
+                          _gotoModel.setPrice(model.value);
+                          result.update(_gotoModel);
+                        },
+                        colorPallet,
+                      ),
                     )),
               ],
             ),
@@ -82,6 +91,7 @@ class CalAreaRow extends HookWidget {
   Widget build(BuildContext context) {
     final price = useProvider(priceProvider);
     final result = useProvider(resultProvider);
+    final colorPallet = useProvider(themeProvider).state;
 
     return Row(
       children: [
@@ -98,6 +108,7 @@ class CalAreaRow extends HookWidget {
                   _gotoModel.setPrice(model.value);
                   result.update(_gotoModel);
                 },
+                colorPallet,
               ),
             ),
           ),
