@@ -6,8 +6,9 @@ import '../../color_pallet.dart';
 class ThemeButtonButton extends StatelessWidget {
   final Icon icon;
   final Function onPressed;
+  final ColorPallet theme;
 
-  ThemeButtonButton(this.icon, this.onPressed);
+  ThemeButtonButton(this.icon, this.onPressed, this.theme);
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -16,7 +17,7 @@ class ThemeButtonButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 5,
         shape: CircleBorder(),
-        primary: lightThema.base,
+        primary: theme.base,
       ),
     );
   }
