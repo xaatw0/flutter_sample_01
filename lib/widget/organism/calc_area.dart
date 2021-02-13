@@ -26,7 +26,7 @@ class CalcArea extends HookWidget {
     final price = useProvider(priceProvider);
     final state = useProvider(priceProvider.state);
     final result = useProvider(resultProvider);
-    final colorPallet = useProvider(themeProvider).state;
+    final colorPallet = useProvider(themeProvider.state);
 
     return AspectRatio(
       aspectRatio: 3 / 4.5,
@@ -91,7 +91,7 @@ class CalAreaRow extends HookWidget {
   Widget build(BuildContext context) {
     final price = useProvider(priceProvider);
     final result = useProvider(resultProvider);
-    final colorPallet = useProvider(themeProvider).state;
+    final colorPallet = useProvider(themeProvider.state);
 
     return Row(
       children: [

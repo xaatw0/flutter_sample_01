@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ResultAccentText extends StatelessWidget {
   final String text;
+  final ColorPallet colorPallet;
 
-  ResultAccentText(this.text);
+  ResultAccentText(this.text, this.colorPallet);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class ResultAccentText extends StatelessWidget {
       style: GoogleFonts.kosugiMaru(
         fontSize: 36,
         fontWeight: FontWeight.w500,
-        color: lightThema.sub,
+        color: colorPallet.sub,
       ),
     );
   }

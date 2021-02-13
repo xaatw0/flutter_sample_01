@@ -4,15 +4,16 @@ import 'package:flutter_app_01/color_pallet.dart';
 class SelectButtonIcon extends StatelessWidget {
   final IconData iconData;
   final double size = 24;
+  final ColorPallet colorPallet;
 
-  SelectButtonIcon(this.iconData);
+  SelectButtonIcon(this.iconData, this.colorPallet);
 
   @override
   Widget build(BuildContext context) {
     return Icon(
       iconData,
       size: size,
-      color: lightThema.sub,
+      color: colorPallet.sub,
     );
   }
 }

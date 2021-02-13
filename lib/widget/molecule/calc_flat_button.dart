@@ -25,6 +25,6 @@ class CalcFlatButton extends StatelessWidget {
       ],
     );
 
-    return CalcFlatButtonButton(row, onPressed);
+    return CalcFlatButtonButton(row, onPressed, colorPallet);
   }
 }

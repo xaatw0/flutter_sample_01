@@ -4,8 +4,9 @@ import 'package:flutter_app_01/color_pallet.dart';
 class CalcFlatButtonButton extends StatelessWidget {
   final Widget child;
   final Function onPressed;
+  final ColorPallet colorPallet;
 
-  CalcFlatButtonButton(this.child, this.onPressed);
+  CalcFlatButtonButton(this.child, this.onPressed, this.colorPallet);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CalcFlatButtonButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60),
         ),
-        primary: lightThema.sub,
+        primary: colorPallet.sub,
       ),
     );
   }

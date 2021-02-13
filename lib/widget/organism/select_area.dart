@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/notifier/int_value_notifier.dart';
 import 'package:flutter_app_01/notifier/result_notifier.dart';
+import 'package:flutter_app_01/notifier/theme_notifier.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/all.dart';
@@ -25,6 +26,7 @@ class SelectArea extends HookWidget {
     final stay = useProvider(stayProvider);
     final stayState = useProvider(stayProvider.state);
     final result = useProvider(resultProvider);
+    final colorPallet = useProvider(themeProvider.state);
 
     return Row(
       children: [
@@ -51,33 +53,30 @@ class SelectArea extends HookWidget {
                   _gotoModel.setPerson(index + 1);
                   result.update(_gotoModel);
                 },
+                colorPallet,
               ),
             )),
         Expanded(
           flex: 1,
           child: Padding(
             padding: const EdgeInsets.only(left: 8.0),
-            child: SelectButton(
-              Icons.hotel,
-              lstStay[stayState],
-              () async {
-                int index = await showConfirmationDialog<int>(
-                  context: context,
-                  title: '宿泊日数',
-                  message: '宿泊する日数を選んでください',
-                  initialSelectedActionKey: stayState,
-                  actions: createDialogSelect(lstStay),
-                );
-                if (index == null) {
-                  return;
-                }
+            child: SelectButton(Icons.hotel, lstStay[stayState], () async {
+              int index = await showConfirmationDialog<int>(
+                context: context,
+                title: '宿泊日数',
+                message: '宿泊する日数を選んでください',
+                initialSelectedActionKey: stayState,
+                actions: createDialogSelect(lstStay),
+              );
+              if (index == null) {
+                return;
+              }
 
-                stay.setValue(index);
+              stay.setValue(index);
 
-                _gotoModel.setStay(index);
-                result.update(_gotoModel);
-              },
-            ),
+              _gotoModel.setStay(index);
+              result.update(_gotoModel);
+            }, colorPallet),
           ),
         ),
       ],
