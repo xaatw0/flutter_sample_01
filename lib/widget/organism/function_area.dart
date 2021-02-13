@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_01/model/calc_model.dart';
 import 'package:flutter_app_01/model/goto_model.dart';
 import 'package:flutter_app_01/notifier/int_value_notifier.dart';
+import 'package:flutter_app_01/notifier/theme_notifier.dart';
 import 'package:flutter_app_01/widget/molecule/function_button.dart';
 import 'package:flutter_app_01/widget/molecule/select_button.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -18,6 +19,7 @@ class FunctionArea extends HookWidget {
   Widget build(BuildContext context) {
     final price = useProvider(priceProvider);
     final result = useProvider(resultProvider);
+    final colorPallet = useProvider(themeProvider.state);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,16 +34,21 @@ class FunctionArea extends HookWidget {
               _gotoModel.setPrice(model.value);
               result.update(_gotoModel);
             },
+            colorPallet,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: FunctionButton(Icons.arrow_left, () {
-            model.push(CalcKey.KEY_DEL);
-            price.setValue(model.value);
-            _gotoModel.setPrice(model.value);
-            result.update(_gotoModel);
-          }),
+          child: FunctionButton(
+            Icons.arrow_left,
+            () {
+              model.push(CalcKey.KEY_DEL);
+              price.setValue(model.value);
+              _gotoModel.setPrice(model.value);
+              result.update(_gotoModel);
+            },
+            colorPallet,
+          ),
         ),
       ],
     );
