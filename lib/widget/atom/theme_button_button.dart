@@ -16,7 +16,7 @@ class ThemeButtonButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         elevation: 5,
         shape: CircleBorder(),
-        primary: lightThema.sub,
+        primary: lightThema.base,
       ),
     );
   }

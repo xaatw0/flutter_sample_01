@@ -23,3 +23,10 @@ ColorPallet lightThema = ColorPallet(
   ColorPallet._hexToColor(kColorSub),
   ColorPallet._hexToColor(kColorBackground),
 );
+
+ColorPallet darkThema = ColorPallet(
+  ColorPallet._hexToColor(kColorDarkBase),
+  ColorPallet._hexToColor(kColorDarkAccent),
+  ColorPallet._hexToColor(kColorDarkSub),
+  ColorPallet._hexToColor(kColorDarkBackground),
+);
