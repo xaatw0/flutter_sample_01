@@ -30,6 +30,6 @@ class SelectButton extends StatelessWidget {
       ],
     );
 
-    return SelectButtonButton(row, onPressed);
+    return SelectButtonButton(row, onPressed, colorPallet);
   }
 }

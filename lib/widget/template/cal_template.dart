@@ -3,6 +3,7 @@ import 'package:flutter_app_01/color_pallet.dart';
 import 'package:flutter_app_01/widget/organism/ThemeButton.dart';
 import 'package:flutter_app_01/widget/organism/calc_area.dart';
 import 'package:flutter_app_01/widget/organism/input_area.dart';
+import 'package:flutter_app_01/widget/organism/menu_area.dart';
 import 'package:flutter_app_01/widget/organism/result_area.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
 
@@ -11,15 +12,7 @@ class CalcTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 16,
-          ),
-          child: Align(
-            child: ThemeButton(),
-            alignment: Alignment.centerRight,
-          ),
-        ),
+        MenuArea(),
         InputArea(),
         Expanded(
             flex: 1,

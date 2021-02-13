@@ -4,8 +4,9 @@ import 'package:flutter_app_01/color_pallet.dart';
 class SelectButtonButton extends StatelessWidget {
   final Widget child;
   final Function onPressed;
+  final ColorPallet colorPallet;
 
-  SelectButtonButton(this.child, this.onPressed);
+  SelectButtonButton(this.child, this.onPressed, this.colorPallet);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class SelectButtonButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60),
         ),
-        primary: lightThema.base,
+        primary: colorPallet.base,
       ),
     );
   }
