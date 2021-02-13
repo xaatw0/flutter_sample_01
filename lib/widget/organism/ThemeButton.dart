@@ -15,7 +15,7 @@ class ThemeButton extends HookWidget {
     final isLightMode = themeState == lightThema;
 
     return ThemeButtonButton(
-      Icon(Icons.wb_sunny),
+      Icon(isLightMode ? Icons.wb_sunny : Icons.brightness_2),
       () {
         theme.setValue(isLightMode ? darkThema : lightThema);
       },
