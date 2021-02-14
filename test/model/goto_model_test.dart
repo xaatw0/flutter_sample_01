@@ -162,8 +162,9 @@ void main() {
       target.setPrice(18100);
       expect(target.price, 18100);
 
-      expect(target.getMinus(), 6300);
-      expect(target.getPay(), 11800);
+      int diff = 35;
+      expect(target.getMinus(), 6300 + diff);
+      expect(target.getPay(), 11800 - diff);
       expect(target.getCoupone(), 3000);
     });
 
@@ -173,8 +174,9 @@ void main() {
       target.setPrice(88000);
       expect(target.price, 88000);
 
-      expect(target.getMinus(), 30800);
-      expect(target.getPay(), 57200);
+      int diff = 1;
+      expect(target.getMinus(), 30800 - diff);
+      expect(target.getPay(), 57200 + diff);
       expect(target.getCoupone(), 13000);
     });
 
@@ -184,9 +186,10 @@ void main() {
       target.setPrice(136300);
       expect(target.price, 136300);
 
-      expect(target.getMinus(), 47700);
-      expect(target.getPay(), 88600);
-      expect(target.getCoupone(), 3000);
+      int diff = 5;
+      expect(target.getMinus(), 47700 + diff);
+      expect(target.getPay(), 88600 - diff);
+      expect(target.getCoupone(), 20000);
     });
 
     test("2名2泊ドラえもん", () {
@@ -195,8 +198,9 @@ void main() {
       target.setPrice(56400 * 2);
       expect(target.price, 56400 * 2);
 
-      expect(target.getMinus(), 19700 * 2);
-      expect(target.getPay(), 73920 - 520);
+      int diff = -80;
+      expect(target.getMinus(), 19700 * 2 - diff);
+      expect(target.getPay(), 73920 - 520 + diff);
       expect(target.getCoupone(), 17000);
     });
 
@@ -217,8 +221,9 @@ void main() {
       target.setPrice(81000 * 2);
       expect(target.price, 81000 * 2);
 
-      expect(target.getMinus(), 56700);
-      expect(target.getPay(), 105300);
+      int diff = 700;
+      expect(target.getMinus(), 56700 - diff);
+      expect(target.getPay(), 105300 + diff);
       expect(target.getCoupone(), 24000);
     });
   });
