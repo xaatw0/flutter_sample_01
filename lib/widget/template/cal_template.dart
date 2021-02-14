@@ -5,6 +5,7 @@ import 'package:flutter_app_01/widget/organism/calc_area.dart';
 import 'package:flutter_app_01/widget/organism/input_area.dart';
 import 'package:flutter_app_01/widget/organism/menu_area.dart';
 import 'package:flutter_app_01/widget/organism/result_area.dart';
+import 'package:flutter_app_01/widget/organism/result_outline_area.dart';
 import 'package:flutter_app_01/widget/organism/select_area.dart';
 
 class CalcTemplate extends StatelessWidget {
@@ -15,17 +16,9 @@ class CalcTemplate extends StatelessWidget {
         MenuArea(),
         InputArea(),
         Expanded(
-            flex: 1,
-            child: Container(
-              color: lightThema.base,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 32,
-                ),
-                child: ResultArea(),
-              ),
-            )),
+          flex: 1,
+          child: ResultOutlineArea(),
+        ),
       ],
     );
   }
