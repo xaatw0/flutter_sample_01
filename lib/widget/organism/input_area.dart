@@ -39,7 +39,7 @@ class InputArea extends HookWidget {
           Expanded(
             flex: 1,
             child: Container(
-              color: lightThema.sub,
+              color: colorPallet.sub,
             ),
           ),
         ],
