@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 import 'package:flutter_app_01/notifier/theme_notifier.dart';
 import 'package:flutter_app_01/widget/organism/result_area.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -9,15 +10,27 @@ class ResultOutlineArea extends HookWidget {
   Widget build(BuildContext context) {
     final colorPallet = useProvider(themeProvider.state);
 
-    return Container(
-      color: colorPallet.base,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 32,
+    return Stack(
+      children: [
+        Container(
+          color: colorPallet.background,
         ),
-        child: ResultArea(),
-      ),
+        Container(
+          decoration: BoxDecoration(
+            color: colorPallet.base,
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(15),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+              horizontal: 32,
+            ),
+            child: ResultArea(),
+          ),
+        ),
+      ],
     );
   }
 }
