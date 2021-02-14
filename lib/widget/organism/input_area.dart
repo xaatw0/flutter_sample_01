@@ -16,36 +16,33 @@ class InputArea extends HookWidget {
     final colorPallet = useProvider(themeProvider.state);
     return Container(
       color: colorPallet.background,
-      child: Expanded(
-        flex: 3,
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: colorPallet.sub,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: colorPallet.sub,
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: colorPallet.sub,
+              child: Column(
+                children: [
+                  SelectArea(_gotoModel),
+                  CalcArea(_gotoModel),
+                ],
               ),
             ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                color: colorPallet.sub,
-                child: Column(
-                  children: [
-                    SelectArea(_gotoModel),
-                    CalcArea(_gotoModel),
-                  ],
-                ),
-              ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: lightThema.sub,
             ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: lightThema.sub,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -14,7 +14,10 @@ class CalcTemplate extends StatelessWidget {
     return Column(
       children: [
         MenuArea(),
-        InputArea(),
+        Expanded(
+          flex: 3,
+          child: InputArea(),
+        ),
         Expanded(
           flex: 1,
           child: ResultOutlineArea(),
