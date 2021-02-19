@@ -98,6 +98,28 @@ void main() {
       expect(target.getPay(), 3250);
       expect(target.getCoupone(), 1000);
     });
+
+    test("1人7泊", () {
+      target.setPerson(1);
+      target.setStay(7);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 98000);
+      expect(target.getPay(), 202000);
+      expect(target.getCoupone(), 42000);
+    });
+
+    test("1人8泊", () {
+      target.setPerson(1);
+      target.setStay(8);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 98000);
+      expect(target.getPay(), 202000);
+      expect(target.getCoupone(), 42000);
+    });
   });
 
   group("お3人様計算", () {

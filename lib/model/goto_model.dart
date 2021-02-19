@@ -16,8 +16,15 @@ class GotoModel {
   get person => _person;
   get stay => _stay;
 
-  get _priceDownLimit =>
-      (PRICE_LIMIT * 2 * (_stay == 0 ? 0.5 : _stay) * _person).toInt();
+  get _priceDownLimit => (PRICE_LIMIT *
+          2 *
+          (_stay == 0
+              ? 0.5
+              : 7 < _stay
+                  ? 7
+                  : _stay) *
+          _person)
+      .toInt();
 
   void setPrice(int price) {
     _price = price;
