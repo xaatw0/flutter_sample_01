@@ -23,24 +23,24 @@ class ResultArea extends HookWidget {
     return Column(
       children: [
         ResultAreaRow(
-          ResultText("総額:", colorPallet, key: const Key("price_text")),
+          ResultText("総額:", colorPallet, keyText: const Key("price_text")),
           ResultText(formatter.format(price), colorPallet,
-              key: const Key("price_value")),
+              keyText: const Key("price_value")),
         ),
         ResultAreaRow(
-          ResultText("割引:", colorPallet, key: const Key("minus_text")),
+          ResultText("割引:", colorPallet, keyText: const Key("minus_text")),
           ResultText(formatter.format(result.minus), colorPallet,
-              key: const Key("minus_value")),
+              keyText: const Key("minus_value")),
         ),
         ResultAreaRow(
-          ResultAccentText("支払い:", colorPallet, key: const Key("pay_text")),
+          ResultAccentText("支払い:", colorPallet, keyText: const Key("pay_text")),
           ResultAccentText(formatter.format(result.pay), colorPallet,
-              key: const Key("pay_value")),
+              keyText: const Key("pay_value")),
         ),
         ResultAreaRow(
-          ResultText("クーポン:", colorPallet, key: const Key("coupon_text")),
+          ResultText("クーポン:", colorPallet, keyText: const Key("coupon_text")),
           ResultText(formatter.format(result.coupone), colorPallet,
-              key: const Key("coupon_value")),
+              keyText: const Key("coupon_value")),
         ),
       ],
     );

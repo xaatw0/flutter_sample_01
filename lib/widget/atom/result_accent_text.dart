@@ -5,8 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 class ResultAccentText extends StatelessWidget {
   final String text;
   final ColorPallet colorPallet;
+  final Key keyText;
 
-  ResultAccentText(this.text, this.colorPallet, {key});
+  ResultAccentText(this.text, this.colorPallet, {this.keyText});
 
   @override
   Widget build(BuildContext context) {

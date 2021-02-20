@@ -5,8 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 class ResultText extends StatelessWidget {
   final String text;
   final ColorPallet colorPallet;
+  final Key keyText;
 
-  ResultText(this.text, this.colorPallet, {key});
+  ResultText(this.text, this.colorPallet, {this.keyText});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class ResultText extends StatelessWidget {
         fontWeight: FontWeight.w300,
         color: colorPallet.sub,
       ),
+      key: keyText,
     );
   }
 }
