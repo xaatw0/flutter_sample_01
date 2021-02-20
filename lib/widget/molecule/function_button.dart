@@ -8,7 +8,12 @@ class FunctionButton extends StatelessWidget {
   final Function onPressed;
   final ColorPallet colorPallet;
 
-  FunctionButton(this.iconData, this.onPressed, this.colorPallet);
+  FunctionButton(
+    this.iconData,
+    this.onPressed,
+    this.colorPallet, {
+    key,
+  });
 
   @override
   Widget build(BuildContext context) {
