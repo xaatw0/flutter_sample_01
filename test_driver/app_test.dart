@@ -63,10 +63,10 @@ void main() {
       await driver.tap(key6Finder);
       await driver.tap(key7Finder);
       await driver.tap(key8Finder);
-      await driver.tap(key9Finder);
       await driver.tap(key0Finder);
+      await driver.tap(key9Finder);
       await driver.tap(key00Finder);
-      expect(await driver.getText(priceValueFinder), "123456789000");
+      expect(await driver.getText(priceValueFinder), "123,456,780,900");
     });
   });
 }
