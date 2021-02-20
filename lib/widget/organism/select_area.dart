@@ -54,29 +54,36 @@ class SelectArea extends HookWidget {
                   result.update(_gotoModel);
                 },
                 colorPallet,
+                key: const Key("face"),
               ),
             )),
         Expanded(
           flex: 1,
           child: Padding(
             padding: const EdgeInsets.only(left: 8.0),
-            child: SelectButton(Icons.hotel, lstStay[stayState], () async {
-              int index = await showConfirmationDialog<int>(
-                context: context,
-                title: '宿泊日数',
-                message: '宿泊する日数を選んでください',
-                initialSelectedActionKey: stayState,
-                actions: createDialogSelect(lstStay),
-              );
-              if (index == null) {
-                return;
-              }
+            child: SelectButton(
+              Icons.hotel,
+              lstStay[stayState],
+              () async {
+                int index = await showConfirmationDialog<int>(
+                  context: context,
+                  title: '宿泊日数',
+                  message: '宿泊する日数を選んでください',
+                  initialSelectedActionKey: stayState,
+                  actions: createDialogSelect(lstStay),
+                );
+                if (index == null) {
+                  return;
+                }
 
-              stay.setValue(index);
+                stay.setValue(index);
 
-              _gotoModel.setStay(index);
-              result.update(_gotoModel);
-            }, colorPallet),
+                _gotoModel.setStay(index);
+                result.update(_gotoModel);
+              },
+              colorPallet,
+              key: const Key("hotel"),
+            ),
           ),
         ),
       ],

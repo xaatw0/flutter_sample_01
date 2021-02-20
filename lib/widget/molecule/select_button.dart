@@ -14,8 +14,9 @@ class SelectButton extends StatelessWidget {
     this.iconData,
     this.text,
     this.onPressed,
-    this.colorPallet,
-  );
+    this.colorPallet, {
+    key,
+  });
 
   @override
   Widget build(BuildContext context) {
