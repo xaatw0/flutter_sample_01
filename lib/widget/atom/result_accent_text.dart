@@ -18,6 +18,7 @@ class ResultAccentText extends StatelessWidget {
         fontWeight: FontWeight.w500,
         color: colorPallet.sub,
       ),
+      key: keyText,
     );
   }
 }
