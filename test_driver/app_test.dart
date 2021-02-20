@@ -17,6 +17,9 @@ void main() {
     final key0Finder = find.byValueKey("0");
     final key00Finder = find.byValueKey("00");
 
+    final keyClearFinder = find.byValueKey("clear");
+    final keyDeleteFinder = find.byValueKey("delete");
+
     final priceValueFinder = find.byValueKey("price_value");
     final minusValueFinder = find.byValueKey("minus_value");
     final payValueFinder = find.byValueKey("pay_value");
@@ -30,6 +33,10 @@ void main() {
       if (health.status == HealthStatus.bad) {
         fail("Flutter driver が起動せず");
       }
+    });
+
+    setUp(() async {
+      await driver.tap(keyClearFinder);
     });
 
     tearDownAll(() async {
