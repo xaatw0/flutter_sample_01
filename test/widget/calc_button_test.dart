@@ -47,4 +47,17 @@ void main() {
     await tester.tap((find.text("1")));
     expect(number, 2);
   });
+
+  testWidgets("CalcButtonの色", (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: CalcButton("1", null, lightThema),
+      ),
+    );
+    await tester.pump();
+    expect(
+      (tester.firstWidget(find.text("1")) as Text).style.color,
+      lightThema.base,
+    );
+  });
 }
