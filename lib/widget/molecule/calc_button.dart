@@ -12,7 +12,8 @@ class CalcButton extends StatelessWidget {
   final Function onPressed;
   final ColorPallet colorPallet;
 
-  CalcButton(this.text, this.onPressed, this.colorPallet);
+  CalcButton(this.text, this.onPressed, this.colorPallet)
+      : super(key: Key(text));
 
   @override
   Widget build(BuildContext context) {
