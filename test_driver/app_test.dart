@@ -17,5 +17,19 @@ void main() {
         fail("Flutter driver が起動せず");
       }
     });
+
+    tearDownAll(() async {
+      if (driver != null) {
+        driver.close();
+      }
+    });
+
+    test("1をタップ", () async {
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key1Finder);
+      expect(await driver.getText(priceValueFinder), "1");
+      await driver.tap(key1Finder);
+      expect(await driver.getText(priceValueFinder), "11");
+    });
   });
 }
