@@ -45,5 +45,21 @@ void main() {
       await driver.tap(key1Finder);
       expect(await driver.getText(priceValueFinder), "11");
     });
+
+    test("数字をタップ", () async {
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key1Finder);
+      await driver.tap(key2Finder);
+      await driver.tap(key3Finder);
+      await driver.tap(key4Finder);
+      await driver.tap(key5Finder);
+      await driver.tap(key6Finder);
+      await driver.tap(key7Finder);
+      await driver.tap(key8Finder);
+      await driver.tap(key9Finder);
+      await driver.tap(key0Finder);
+      await driver.tap(key00Finder);
+      expect(await driver.getText(priceValueFinder), "123456789000");
+    });
   });
 }
