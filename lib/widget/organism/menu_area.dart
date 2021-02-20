@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/all.dart';
 
-import 'ThemeButton.dart';
+import 'theme_button.dart';
 
 class MenuArea extends HookWidget {
   @override
