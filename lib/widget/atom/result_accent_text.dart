@@ -6,7 +6,7 @@ class ResultAccentText extends StatelessWidget {
   final String text;
   final ColorPallet colorPallet;
 
-  ResultAccentText(this.text, this.colorPallet);
+  ResultAccentText(this.text, this.colorPallet, {key});
 
   @override
   Widget build(BuildContext context) {

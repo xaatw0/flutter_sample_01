@@ -6,7 +6,7 @@ class ResultText extends StatelessWidget {
   final String text;
   final ColorPallet colorPallet;
 
-  ResultText(this.text, this.colorPallet);
+  ResultText(this.text, this.colorPallet, {key});
 
   @override
   Widget build(BuildContext context) {
