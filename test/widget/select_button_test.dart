@@ -28,5 +28,14 @@ void main() {
     expect(number, 0);
     await tester.tap(find.byIcon(Icons.wb_sunny));
     expect(number, 1);
+
+    expect(
+      (tester.firstWidget(find.text("test")) as Text).style.color,
+      lightThema.background,
+    );
+    expect(
+      (tester.firstWidget(find.byIcon(Icons.wb_sunny)) as Icon).color,
+      lightThema.background,
+    );
   });
 }
