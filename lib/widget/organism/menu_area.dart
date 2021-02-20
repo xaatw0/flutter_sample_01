@@ -17,7 +17,7 @@ class MenuArea extends HookWidget {
           horizontal: 16,
         ),
         child: Align(
-          child: ThemeButton(),
+          child: ThemeButton(key: const Key("ThemeButton")),
           alignment: Alignment.centerRight,
         ),
       ),

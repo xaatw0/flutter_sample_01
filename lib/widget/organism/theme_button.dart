@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/all.dart';
 
 class ThemeButton extends HookWidget {
+  ThemeButton({key});
+
   @override
   Widget build(BuildContext context) {
     final theme = useProvider(themeProvider);
