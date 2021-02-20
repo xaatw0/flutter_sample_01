@@ -68,5 +68,13 @@ void main() {
       await driver.tap(key00Finder);
       expect(await driver.getText(priceValueFinder), "123,456,780,900");
     });
+
+    test("一人日帰り30000円", () async {
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key3Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+      expect(await driver.getText(priceValueFinder), "30,000");
+    });
   });
 }
