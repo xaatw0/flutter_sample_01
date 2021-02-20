@@ -40,7 +40,7 @@ class ResultArea extends HookWidget {
         ResultAreaRow(
           ResultText("クーポン:", colorPallet, key: const Key("coupon_text")),
           ResultText(formatter.format(result.coupone), colorPallet,
-              key: const Key("couponvalue")),
+              key: const Key("coupon_value")),
         ),
       ],
     );
