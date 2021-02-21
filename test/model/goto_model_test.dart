@@ -98,6 +98,28 @@ void main() {
       expect(target.getPay(), 3250);
       expect(target.getCoupone(), 1000);
     });
+
+    test("1人7泊", () {
+      target.setPerson(1);
+      target.setStay(7);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 98000);
+      expect(target.getPay(), 202000);
+      expect(target.getCoupone(), 42000);
+    });
+
+    test("1人8泊", () {
+      target.setPerson(1);
+      target.setStay(8);
+      target.setPrice(300000);
+      expect(target.price, 300000);
+
+      expect(target.getMinus(), 98000);
+      expect(target.getPay(), 202000);
+      expect(target.getCoupone(), 42000);
+    });
   });
 
   group("お3人様計算", () {
@@ -153,6 +175,78 @@ void main() {
       expect(target.getMinus(), 3500);
       expect(target.getPay(), 6500);
       expect(target.getCoupone(), 2000);
+    });
+  });
+  group("実データ", () {
+    test("日帰り", () {
+      target.setPerson(2);
+      target.setStay(0);
+      target.setPrice(18100);
+      expect(target.price, 18100);
+
+      int diff = 35;
+      expect(target.getMinus(), 6300 + diff);
+      expect(target.getPay(), 11800 - diff);
+      expect(target.getCoupone(), 3000);
+    });
+
+    test("2名2泊 JR東海ツアーズ", () {
+      target.setPerson(2);
+      target.setStay(2);
+      target.setPrice(88000);
+      expect(target.price, 88000);
+
+      int diff = 1;
+      expect(target.getMinus(), 30800 - diff);
+      expect(target.getPay(), 57200 + diff);
+      expect(target.getCoupone(), 13000);
+    });
+
+    test("2名3泊", () {
+      target.setPerson(2);
+      target.setStay(3);
+      target.setPrice(136300);
+      expect(target.price, 136300);
+
+      int diff = 5;
+      expect(target.getMinus(), 47700 + diff);
+      expect(target.getPay(), 88600 - diff);
+      expect(target.getCoupone(), 20000);
+    });
+
+    test("2名2泊ドラえもん", () {
+      target.setPerson(2);
+      target.setStay(3);
+      target.setPrice(56400 * 2);
+      expect(target.price, 56400 * 2);
+
+      int diff = -80;
+      expect(target.getMinus(), 19700 * 2 - diff);
+      expect(target.getPay(), 73920 - 520 + diff);
+      expect(target.getCoupone(), 17000);
+    });
+
+    test("1名1泊 JR東海ツアーズ", () {
+      target.setPerson(1);
+      target.setStay(1);
+      target.setPrice(28800);
+      expect(target.price, 28800);
+
+      expect(target.getMinus(), 10080);
+      expect(target.getPay(), 18720);
+      expect(target.getCoupone(), 4000);
+    });
+
+    test("2名2泊豪華", () {
+      target.setPerson(2);
+      target.setStay(2);
+      target.setPrice(81000 * 2);
+      expect(target.price, 81000 * 2);
+
+      int diff = 700;
+      expect(target.getMinus(), 56700 - diff);
+      expect(target.getPay(), 105300 + diff);
+      expect(target.getCoupone(), 24000);
     });
   });
 }

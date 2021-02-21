@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_01/color_pallet.dart';
 
 class FunctionButtonButton extends StatelessWidget {
   final Widget child;
   final Function onPressed;
+  final ColorPallet colorPallet;
 
-  FunctionButtonButton(this.child, this.onPressed);
+  FunctionButtonButton(this.child, this.onPressed, this.colorPallet);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class FunctionButtonButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60),
         ),
-        primary: Colors.deepPurple,
+        primary: colorPallet.accent,
       ),
     );
   }
