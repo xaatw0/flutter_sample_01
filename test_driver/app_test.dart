@@ -75,6 +75,19 @@ void main() {
       await driver.tap(key00Finder);
       await driver.tap(key00Finder);
       expect(await driver.getText(priceValueFinder), "30,000");
+      expect(await driver.getText(minusValueFinder), "7,000");
+      expect(await driver.getText(couponValueFinder), "3,000");
+      expect(await driver.getText(payValueFinder), "23,000");
+    });
+    test("一人日帰り10000円", () async {
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key1Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+      expect(await driver.getText(priceValueFinder), "10,000");
+      expect(await driver.getText(minusValueFinder), "3,500");
+      expect(await driver.getText(couponValueFinder), "2,000");
+      expect(await driver.getText(payValueFinder), "6,500");
     });
   });
 }
