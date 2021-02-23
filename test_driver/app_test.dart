@@ -25,6 +25,10 @@ void main() {
     final payValueFinder = find.byValueKey("pay_value");
     final couponValueFinder = find.byValueKey("coupon_value");
 
+    final keyPersonFinder = find.byValueKey("face");
+    final poeple5Finder = find.text("5名");
+    final okFinder = find.text("OK");
+
     FlutterDriver driver;
 
     setUpAll(() async {
