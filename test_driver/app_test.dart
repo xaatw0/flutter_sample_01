@@ -48,6 +48,7 @@ void main() {
         driver.close();
       }
     });
+    /*
 
     test("1をタップ", () async {
       expect(await driver.getText(priceValueFinder), "0");
@@ -92,6 +93,12 @@ void main() {
       expect(await driver.getText(minusValueFinder), "3,500");
       expect(await driver.getText(couponValueFinder), "2,000");
       expect(await driver.getText(payValueFinder), "6,500");
+    });
+*/
+    test("宿泊人数", () async {
+      await driver.tap(keyPersonFinder);
+      await driver.tap(poeple5Finder);
+      await driver.tap(okFinder);
     });
   });
 }

@@ -5,8 +5,9 @@ import '../../color_pallet.dart';
 class SelectButtonText extends StatelessWidget {
   final String text;
   final ColorPallet colorPallet;
+  final Key keyText;
 
-  SelectButtonText(this.text, this.colorPallet);
+  SelectButtonText(this.text, this.colorPallet, {this.keyText});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class SelectButtonText extends StatelessWidget {
       style: TextStyle(
         color: colorPallet.sub,
       ),
+      key: keyText,
     );
   }
 }
