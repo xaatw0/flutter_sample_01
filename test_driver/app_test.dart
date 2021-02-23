@@ -99,6 +99,7 @@ void main() {
       await driver.tap(keyPersonFinder);
       await driver.tap(poeple5Finder);
       await driver.tap(okFinder);
+      expect(await driver.getText(keyPersonFinder), "5名");
     });
   });
 }
