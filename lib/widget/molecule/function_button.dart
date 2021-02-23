@@ -7,14 +7,14 @@ class FunctionButton extends StatelessWidget {
   final IconData iconData;
   final Function onPressed;
   final ColorPallet colorPallet;
-  final Key key;
+  final Key keyText;
 
   FunctionButton(
     this.iconData,
     this.onPressed,
     this.colorPallet, {
-    this.key,
-  }) : super(key: key);
+    this.keyText,
+  }) : super(key: keyText);
 
   @override
   Widget build(BuildContext context) {

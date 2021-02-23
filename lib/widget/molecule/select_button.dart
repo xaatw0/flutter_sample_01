@@ -9,13 +9,14 @@ class SelectButton extends StatelessWidget {
   final String text;
   final Function onPressed;
   final ColorPallet colorPallet;
+  final Key keyText;
 
   SelectButton(
     this.iconData,
     this.text,
     this.onPressed,
     this.colorPallet, {
-    key,
+    this.keyText,
   });
 
   @override
@@ -25,7 +26,11 @@ class SelectButton extends StatelessWidget {
         SelectButtonIcon(iconData, colorPallet),
         Expanded(
           child: Center(
-            child: SelectButtonText(text, colorPallet),
+            child: SelectButtonText(
+              text,
+              colorPallet,
+              keyText: keyText,
+            ),
           ),
         ),
       ],

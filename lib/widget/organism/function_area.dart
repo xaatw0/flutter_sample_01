@@ -35,7 +35,7 @@ class FunctionArea extends HookWidget {
               result.update(_gotoModel);
             },
             colorPallet,
-            key: const Key("clear"),
+            keyText: const Key("clear"),
           ),
         ),
         Padding(
@@ -49,7 +49,7 @@ class FunctionArea extends HookWidget {
               result.update(_gotoModel);
             },
             colorPallet,
-            key: const Key("delete"),
+            keyText: const Key("delete"),
           ),
         ),
       ],

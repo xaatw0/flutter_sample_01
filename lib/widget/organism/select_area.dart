@@ -54,7 +54,7 @@ class SelectArea extends HookWidget {
                   result.update(_gotoModel);
                 },
                 colorPallet,
-                key: const Key("face"),
+                keyText: const Key("face"),
               ),
             )),
         Expanded(
@@ -82,7 +82,7 @@ class SelectArea extends HookWidget {
                 result.update(_gotoModel);
               },
               colorPallet,
-              key: const Key("hotel"),
+              keyText: const Key("hotel"),
             ),
           ),
         ),

@@ -20,10 +20,19 @@ void main() {
     final keyClearFinder = find.byValueKey("clear");
     final keyDeleteFinder = find.byValueKey("delete");
 
+    final keyStayFinder = find.byValueKey("hotel");
+    final keyPersonFinder = find.byValueKey("face");
+
     final priceValueFinder = find.byValueKey("price_value");
     final minusValueFinder = find.byValueKey("minus_value");
     final payValueFinder = find.byValueKey("pay_value");
     final couponValueFinder = find.byValueKey("coupon_value");
+
+    final people2Finder = find.text("2名");
+    final people5Finder = find.text("5名");
+    final stay0Finder = find.text("日帰り");
+    final stay3Finder = find.text("3泊4日");
+    final okFinder = find.text("OK");
 
     FlutterDriver driver;
 
@@ -44,7 +53,6 @@ void main() {
         driver.close();
       }
     });
-
     test("1をタップ", () async {
       expect(await driver.getText(priceValueFinder), "0");
       await driver.tap(key1Finder);
@@ -88,6 +96,89 @@ void main() {
       expect(await driver.getText(minusValueFinder), "3,500");
       expect(await driver.getText(couponValueFinder), "2,000");
       expect(await driver.getText(payValueFinder), "6,500");
+    });
+
+    test("宿泊日数", () async {
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay3Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyStayFinder), "3泊4日");
+
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay0Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyStayFinder), "日帰り");
+    });
+
+    test("宿泊人数", () async {
+      await driver.tap(keyPersonFinder);
+      await driver.tap(people2Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyPersonFinder), "2名");
+
+      await driver.tap(keyPersonFinder);
+      await driver.tap(people5Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyPersonFinder), "5名");
+    });
+    test("二人3泊10000円", () async {
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay3Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyStayFinder), "3泊4日");
+
+      await driver.tap(keyPersonFinder);
+      await driver.tap(people2Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyPersonFinder), "2名");
+
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key1Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key0Finder);
+      expect(await driver.getText(priceValueFinder), "100,000");
+      expect(await driver.getText(minusValueFinder), "35,000");
+      expect(await driver.getText(couponValueFinder), "15,000");
+      expect(await driver.getText(payValueFinder), "65,000");
+    });
+
+    test("削除・クリアボタン", () async {
+      expect(await driver.getText(priceValueFinder), "0");
+
+      await driver.tap(keyDeleteFinder);
+      await driver.tap(keyDeleteFinder);
+      await driver.tap(keyClearFinder);
+      await driver.tap(keyClearFinder);
+
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay0Finder);
+      await driver.tap(stay3Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyStayFinder), "3泊4日");
+
+      await driver.tap(keyPersonFinder);
+      await driver.tap(people5Finder);
+      await driver.tap(people2Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyPersonFinder), "2名");
+
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key1Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+
+      expect(await driver.getText(priceValueFinder), "1,000,000");
+      expect(await driver.getText(minusValueFinder), "84,000");
+      expect(await driver.getText(couponValueFinder), "36,000");
+      expect(await driver.getText(payValueFinder), "916,000");
+
+      await driver.tap(keyDeleteFinder);
+      expect(await driver.getText(priceValueFinder), "100,000");
+      expect(await driver.getText(minusValueFinder), "35,000");
+      expect(await driver.getText(couponValueFinder), "15,000");
+      expect(await driver.getText(payValueFinder), "65,000");
     });
   });
 }
