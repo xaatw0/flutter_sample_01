@@ -105,12 +105,23 @@ void main() {
       await driver.tap(poeple5Finder);
       await driver.tap(okFinder);
       expect(await driver.getText(keyPersonFinder), "5名");
+
+      await driver.tap(keyPersonFinder);
+      await driver.tap(poeple1Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyPersonFinder), "1名");
     });
+
     test("宿泊日数", () async {
       await driver.tap(keyStayFinder);
       await driver.tap(stay5Finder);
       await driver.tap(okFinder);
       expect(await driver.getText(keyStayFinder), "5泊6日");
+
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay0Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyStayFinder), "日帰り");
     });
   });
 }
