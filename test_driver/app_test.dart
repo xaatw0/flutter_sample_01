@@ -29,6 +29,9 @@ void main() {
     final poeple5Finder = find.text("5名");
     final okFinder = find.text("OK");
 
+    final keyStayFinder = find.byValueKey("hotel");
+    final stay5Finder = find.text("5泊6日");
+
     FlutterDriver driver;
 
     setUpAll(() async {
