@@ -99,7 +99,6 @@ void main() {
       expect(await driver.getText(couponValueFinder), "2,000");
       expect(await driver.getText(payValueFinder), "6,500");
     });
-*/
     test("宿泊人数", () async {
       await driver.tap(keyPersonFinder);
       await driver.tap(poeple5Finder);
@@ -123,6 +122,7 @@ void main() {
       await driver.tap(okFinder);
       expect(await driver.getText(keyStayFinder), "日帰り");
     });
+*/
 
     test("削除・クリアボタン", () async {
       expect(await driver.getText(priceValueFinder), "0");
@@ -147,6 +147,27 @@ void main() {
       await driver.tap(key00Finder);
 
       expect(await driver.getText(priceValueFinder), "1,000,000");
+      expect(await driver.getText(minusValueFinder), "350,000");
+      expect(await driver.getText(couponValueFinder), "150,000");
+      expect(await driver.getText(payValueFinder), "650,000");
+
+      await driver.tap(keyDeleteFinder);
+      expect(await driver.getText(priceValueFinder), "100,000");
+      expect(await driver.getText(minusValueFinder), "35,000");
+      expect(await driver.getText(couponValueFinder), "15,000");
+      expect(await driver.getText(payValueFinder), "65,000");
+
+      await driver.tap(keyDeleteFinder);
+      expect(await driver.getText(priceValueFinder), "10,000");
+      expect(await driver.getText(minusValueFinder), "3,500");
+      expect(await driver.getText(couponValueFinder), "1,500");
+      expect(await driver.getText(payValueFinder), "6,500");
+
+      await driver.tap(keyClearFinder);
+      expect(await driver.getText(priceValueFinder), "0");
+      expect(await driver.getText(minusValueFinder), "0");
+      expect(await driver.getText(couponValueFinder), "0");
+      expect(await driver.getText(payValueFinder), "0");
     });
   });
 }
