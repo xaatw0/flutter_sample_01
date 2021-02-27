@@ -26,10 +26,12 @@ void main() {
     final couponValueFinder = find.byValueKey("coupon_value");
 
     final keyPersonFinder = find.byValueKey("face");
+    final poeple1Finder = find.text("1名");
     final poeple5Finder = find.text("5名");
     final okFinder = find.text("OK");
 
     final keyStayFinder = find.byValueKey("hotel");
+    final stay0Finder = find.text("日帰り");
     final stay5Finder = find.text("5泊6日");
 
     FlutterDriver driver;
