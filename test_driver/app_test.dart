@@ -55,7 +55,6 @@ void main() {
         driver.close();
       }
     });
-    /*
 
     test("1をタップ", () async {
       expect(await driver.getText(priceValueFinder), "0");
@@ -170,7 +169,6 @@ void main() {
       expect(await driver.getText(couponValueFinder), "0");
       expect(await driver.getText(payValueFinder), "0");
     });
-*/
 
     const String pathScreenshot = "./test_driver/screenshots";
 
