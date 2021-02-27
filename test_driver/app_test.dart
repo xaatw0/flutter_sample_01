@@ -160,7 +160,7 @@ void main() {
       await driver.tap(keyDeleteFinder);
       expect(await driver.getText(priceValueFinder), "10,000");
       expect(await driver.getText(minusValueFinder), "3,500");
-      expect(await driver.getText(couponValueFinder), "1,500");
+      expect(await driver.getText(couponValueFinder), "2,000");
       expect(await driver.getText(payValueFinder), "6,500");
 
       await driver.tap(keyClearFinder);
