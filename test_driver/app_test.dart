@@ -106,5 +106,11 @@ void main() {
       await driver.tap(okFinder);
       expect(await driver.getText(keyPersonFinder), "5名");
     });
+    test("宿泊日数", () async {
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay5Finder);
+      await driver.tap(okFinder);
+      expect(await driver.getText(keyStayFinder), "5泊6日");
+    });
   });
 }
