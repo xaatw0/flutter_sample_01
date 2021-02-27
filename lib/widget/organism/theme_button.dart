@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/all.dart';
 
 class ThemeButton extends HookWidget {
-  ThemeButton({key});
+  ThemeButton({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
