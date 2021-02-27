@@ -34,6 +34,8 @@ void main() {
     final stay0Finder = find.text("日帰り");
     final stay5Finder = find.text("5泊6日");
 
+    final keyThemeFinder = find.byValueKey("ThemeButton");
+
     FlutterDriver driver;
 
     setUpAll(() async {
@@ -122,7 +124,6 @@ void main() {
       await driver.tap(okFinder);
       expect(await driver.getText(keyStayFinder), "日帰り");
     });
-*/
 
     test("削除・クリアボタン", () async {
       expect(await driver.getText(priceValueFinder), "0");
@@ -169,7 +170,23 @@ void main() {
       expect(await driver.getText(couponValueFinder), "0");
       expect(await driver.getText(payValueFinder), "0");
     });
+*/
 
     const String pathScreenshot = "./test_driver/screenshots";
+
+    Future<void> screnshot(FlutterDriver driver, String testName) async {
+      await driver.waitUntilNoTransientCallbacks();
+      final pixels = await driver.screenshot();
+      final file = File("$pathScreenshot/$testName.png");
+      await file.writeAsBytes(pixels);
+    }
+
+    test("テーマボタン", () async {
+      await screnshot(driver, "1ライトテーマ");
+      await driver.tap(keyThemeFinder);
+      await screnshot(driver, "2ダークテーマ");
+      await driver.tap(keyThemeFinder);
+      await screnshot(driver, "3ライトテーマ");
+    });
   });
 }
