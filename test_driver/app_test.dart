@@ -123,5 +123,30 @@ void main() {
       await driver.tap(okFinder);
       expect(await driver.getText(keyStayFinder), "日帰り");
     });
+
+    test("削除・クリアボタン", () async {
+      expect(await driver.getText(priceValueFinder), "0");
+
+      await driver.tap(keyDeleteFinder);
+      await driver.tap(keyDeleteFinder);
+      await driver.tap(keyClearFinder);
+      await driver.tap(keyClearFinder);
+
+      await driver.tap(keyPersonFinder);
+      await driver.tap(poeple5Finder);
+      await driver.tap(okFinder);
+
+      await driver.tap(keyStayFinder);
+      await driver.tap(stay5Finder);
+      await driver.tap(okFinder);
+
+      expect(await driver.getText(priceValueFinder), "0");
+      await driver.tap(key1Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+      await driver.tap(key00Finder);
+
+      expect(await driver.getText(priceValueFinder), "1,000,000");
+    });
   });
 }
